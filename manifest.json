@@ -1,0 +1,17 @@
+{
+  "name": "Homo Goetia: Infernal Temple",
+  "short_name": "Infernal Temple",
+  "description": "A privacy-first client-side gay occult hub featuring sigil generators, soundscape mixers, and Solomonic keys.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#060506",
+  "theme_color": "#ff5a79",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
