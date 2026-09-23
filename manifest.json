@@ -1,7 +1,7 @@
 {
-  "name": "Homo Goetia: Infernal Temple",
-  "short_name": "Infernal Temple",
-  "description": "A privacy-first client-side gay occult hub featuring sigil generators, soundscape mixers, and Solomonic keys.",
+  "name": "Homo Goetia: Ritual OS & Grimoire",
+  "short_name": "Homo Goetia",
+  "description": "A privacy-first client-side ritual operating system, computational grimoire, and Solomonic archive.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#060506",

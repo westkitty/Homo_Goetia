@@ -6,11 +6,14 @@
   <title>The Infernal Temple - Privacy-First Gay Occult Hub</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ff5a79">
+  <meta name="theme-color" content="#d61c38">
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="icon.svg">
 </head>
 <body>
+  <!-- Ambient Motion Dripping Canvas Overlay -->
+  <canvas id="drip-canvas" class="drip-canvas" aria-hidden="true"></canvas>
+
   <!-- Ritual Portal Overlay -->
   <div id="portal-container">
     <canvas id="portal-canvas"></canvas>
@@ -53,18 +56,54 @@
       </div>
 
       <nav class="nav-menu">
-        <div class="sidebar-section-header">The Entrance</div>
-        <li class="nav-item active" data-tab="altar">
+        <div style="padding: 0.5rem 0.75rem 0.5rem;">
+          <button class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.78rem; gap: 0.4rem; padding: 0.45rem;" onclick="app.openChamberPalette()">
+            <span>⌘K</span> Jump to Any Chamber (32)
+          </button>
+        </div>
+
+        <div class="sidebar-section-header">Primary Domains</div>
+        <li class="nav-item active" data-domain-nav="altar" onclick="app.switchDomain('altar')">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-            The Altar
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            Altar (Home)
+          </button>
+        </li>
+        <li class="nav-item" data-domain-nav="archive" onclick="app.switchDomain('archive')">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            Archive (Lore)
+          </button>
+        </li>
+        <li class="nav-item" data-domain-nav="forge" onclick="app.switchDomain('forge')">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+            Forge (Creation)
+          </button>
+        </li>
+        <li class="nav-item" data-domain-nav="chambers" onclick="app.switchDomain('chambers')">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            Chambers (Ritual)
+          </button>
+        </li>
+        <li class="nav-item" data-domain-nav="grimoire" onclick="app.switchDomain('grimoire')">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
+            Grimoire (Vault)
           </button>
         </li>
 
-        <div class="sidebar-section-header">The Purge</div>
+        <div class="sidebar-section-header">The Entrance</div>
+        <li class="nav-item" data-tab="altar">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            The Altar
+          </button>
+        </li>
         <li class="nav-item" data-tab="banish">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/></svg>
             Banishment Ritual
           </button>
         </li>
@@ -72,223 +111,314 @@
         <div class="sidebar-section-header">The Alchemy Lab</div>
         <li class="nav-item" data-tab="forge-sigil">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
             Sigil Forge
           </button>
         </li>
         <li class="nav-item" data-tab="forge-dice">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2z"/></svg>
             Alchemical Dice
           </button>
         </li>
         <li class="nav-item" data-tab="grimoire-transmuter">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
             Ritual Transmuter
           </button>
         </li>
+        <li class="nav-item" data-tab="charging">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 18H4.47L12 5.99z"/></svg>
+            Charging Station
+          </button>
+        </li>
 
-        <div class="sidebar-section-header">Cosmic Clock</div>
+        <div class="sidebar-section-header">Cosmic Clock & Oracles</div>
         <li class="nav-item" data-tab="astrolabe">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="currentColor"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="currentColor"/></svg>
             Black Sun Astrolabe
           </button>
         </li>
-
-        <div class="sidebar-section-header">Summoner's Pit</div>
         <li class="nav-item" data-tab="demonology">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3l7.5 15h-15L12 5zm-1 6h2v2h-2v-2zm0 4h2v2h-2v-2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3l7.5 15h-15L12 5zm-1 6h2v2h-2v-2zm0 4h2v2h-2v-2z"/></svg>
             Goetic Generator
           </button>
         </li>
-        <li class="nav-item" data-tab="cipher">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10z"/></svg>
-            Private Cipher
-          </button>
-        </li>
-        <li class="nav-item" data-tab="pact">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2z"/></svg>
-            Blood Pact
-          </button>
-        </li>
-
-        <div class="sidebar-section-header">The Solomonic Archives</div>
         <li class="nav-item" data-tab="library-solomon">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
             Keys of Solomon
           </button>
         </li>
         <li class="nav-item" data-tab="library-tarot">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg>
             Tarot Oracle
           </button>
         </li>
-        <li class="nav-item" data-tab="library-tenets">
+        <li class="nav-item" data-tab="cipher">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            TST Philosophy
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10z"/></svg>
+            Private Cipher
+          </button>
+        </li>
+        <li class="nav-item" data-tab="pact">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2z"/></svg>
+            Blood Pact & Bond
           </button>
         </li>
 
-        <div class="sidebar-section-header">Temple Sensory</div>
-        <li class="nav-item" data-tab="incense">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v2H6v2h12V6h-4V4c0-1.1-.9-2-2-2zM4 10v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10H4z"/></svg>
-            Censer Smoke
-          </button>
-        </li>
-        <li class="nav-item" data-tab="echoes">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
-            Acoustic Nodes
-          </button>
-        </li>
-
-        <div class="sidebar-section-header">The Sanctum</div>
+        <div class="sidebar-section-header">Temple Sensory & Sound</div>
         <li class="nav-item" data-tab="sanctum-mixer">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
             Soundscape Mixer
           </button>
         </li>
         <li class="nav-item" data-tab="sanctum-timer">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2z"/></svg>
             Focus & Edge Timer
+          </button>
+        </li>
+        <li class="nav-item" data-tab="incense">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v2H6v2h12V6h-4V4c0-1.1-.9-2-2-2zM4 10v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10H4z"/></svg>
+            Censer Smoke
+          </button>
+        </li>
+        <li class="nav-item" data-tab="echoes">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            Acoustic Nodes
+          </button>
+        </li>
+
+        <div class="sidebar-section-header">Grimoire & Descent</div>
+        <li class="nav-item" data-tab="grimoire-journal">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            Grimoire Journal
           </button>
         </li>
         <li class="nav-item" data-tab="library-journey">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/></svg>
             Descent Journey
           </button>
         </li>
-        <li class="nav-item" data-tab="grimoire-journal">
+        <li class="nav-item" data-tab="library-tenets">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-            Grimoire Journal
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            TST Philosophy
+          </button>
+        </li>
+        <li class="nav-item" data-tab="trivia">
+          <button>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            Gnosis Trivia
           </button>
         </li>
 
         <div class="sidebar-section-header">Meditation Mirror</div>
         <li class="nav-item" data-tab="mirror">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
             Shadow Mirror
-          </button>
-        </li>
-        <li class="nav-item" data-tab="charging">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 18H4.47L12 5.99z"/></svg>
-            Charging Station
           </button>
         </li>
         <li class="nav-item" data-tab="scryer">
           <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
             Dark Scryer
-          </button>
-        </li>
-        <li class="nav-item" data-tab="trivia">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-            Gnosis Trivia
-          </button>
-        </li>
-
-        <div class="sidebar-section-header">Smoke Rituals</div>
-        <li class="nav-item" data-tab="smoke-serpent">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-            Serpent's Breath
-          </button>
-        </li>
-        <li class="nav-item" data-tab="smoke-brimstone">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-            Brimstone Vapors
-          </button>
-        </li>
-        <li class="nav-item" data-tab="smoke-dragon">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-            Dragon's Maw
-          </button>
-        </li>
-        <li class="nav-item" data-tab="smoke-transmute">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-            Vaporous Transmute
-          </button>
-        </li>
-        <li class="nav-item" data-tab="smoke-banish">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-            Banishment Cloud
-          </button>
-        </li>
-
-        <div class="sidebar-section-header">Sovereign Desires</div>
-        <li class="nav-item" data-tab="desire-bond">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-3.78 3.4-6.86 8.55-11.54L12 21.35z"/></svg>
-            Sovereign Bond
-          </button>
-        </li>
-        <li class="nav-item" data-tab="desire-shadow">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-3.78 3.4-6.86 8.55-11.54L12 21.35z"/></svg>
-            Erotic Shadow Mirror
-          </button>
-        </li>
-        <li class="nav-item" data-tab="desire-astrolabe">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-3.78 3.4-6.86 8.55-11.54L12 21.35z"/></svg>
-            Phallic Astrolabe
-          </button>
-        </li>
-        <li class="nav-item" data-tab="desire-devotion">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-3.78 3.4-6.86 8.55-11.54L12 21.35z"/></svg>
-            Goetic Devotion
-          </button>
-        </li>
-        <li class="nav-item" data-tab="desire-edging">
-          <button>
-            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-3.78 3.4-6.86 8.55-11.54L12 21.35z"/></svg>
-            Erotic Edging Loop
           </button>
         </li>
       </nav>
 
       <div class="sidebar-footer">
-        <span>🔒 Privacy First (Local)</span>
+        <span>🔒 100% Local-First (Zero Cloud)</span>
         <span>•</span>
-        <span>v1.2.0</span>
+        <span>v2.0.0</span>
       </div>
     </aside>
 
     <!-- Main Content Area -->
     <main class="main-content">
+
+      <!-- Domain Navigation Bar (Sticky Top) -->
+      <nav class="domain-nav-bar" id="domain-nav-bar" aria-label="Ritual Domains">
+        <div class="domain-pills">
+          <button class="domain-pill active" data-domain="altar" onclick="app.switchDomain('altar')">
+            <span>⛧</span> Altar
+          </button>
+          <button class="domain-pill" data-domain="archive" onclick="app.switchDomain('archive')">
+            <span>📜</span> Archive
+          </button>
+          <button class="domain-pill" data-domain="forge" onclick="app.switchDomain('forge')">
+            <span>⚡</span> Forge
+          </button>
+          <button class="domain-pill" data-domain="chambers" onclick="app.switchDomain('chambers')">
+            <span>🔮</span> Chambers
+          </button>
+          <button class="domain-pill" data-domain="grimoire" onclick="app.switchDomain('grimoire')">
+            <span>📖</span> Grimoire
+          </button>
+        </div>
+        <button class="btn-chamber-search" id="btn-open-palette" onclick="app.openChamberPalette()" title="Search all 32 chambers (Cmd+K)">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <span>All Chambers (32)</span>
+          <span class="kbd-shortcut">⌘K</span>
+        </button>
+      </nav>
       
       <!-- PAGE 1: THE ALTAR (HOME) -->
       <section id="altar-tab" class="tab-panel active">
-        <div class="altar-banner">
-          <h1 class="gothic-title-decor">Welcome, Seeker</h1>
-          <p>This is your sovereign digital chapel. A local-first, Progressive Web App built for ritual exploration, creative alchemy, and gay satanic empowerment.</p>
-          <div class="timer-controls">
-            <button class="btn btn-primary" onclick="app.switchTab('forge-sigil')">🔥 Forge Sigil</button>
-            <button class="btn btn-purple" onclick="app.switchTab('library-solomon')">📖 Browse Solomon Keys</button>
+        <!-- Active Ritual Session Banner -->
+        <div id="altar-active-ritual-banner" class="ritual-active-banner" style="display:none;">
+          <div class="ritual-active-banner-info">
+            <div class="ritual-active-title">
+              <span class="badge-provenance badge-personal">⚡ ACTIVE RITUAL</span>
+              <span id="active-ritual-title">Ritual Title</span>
+              <span id="active-ritual-status" class="badge-provenance badge-forged" style="font-size:0.68rem;">ACTIVE</span>
+            </div>
+            <div id="active-ritual-intent" class="ritual-active-intent">"Declared intention..."</div>
+            <div id="active-ritual-stages" class="ritual-stage-tracker"></div>
+          </div>
+          <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+            <button class="btn btn-primary" id="btn-ritual-goto-stage" onclick="app.ritualEngine.goToCurrentStage()">⚔ Enter Stage Chamber</button>
+            <button class="btn btn-outline" id="btn-ritual-complete-stage" onclick="app.ritualEngine.completeCurrentStage()">✓ Complete Stage</button>
+            <button class="btn" id="btn-ritual-skip-stage" onclick="app.ritualEngine.skipCurrentStage()">⏭ Skip</button>
+            <button class="btn btn-outline" id="btn-ritual-pause" onclick="app.ritualEngine.togglePause()">⏸ Pause</button>
+            <button class="btn btn-purple" id="btn-ritual-seal" onclick="app.ritualEngine.sealActiveRitual()">⛧ Seal Ritual</button>
           </div>
         </div>
 
+        <!-- Ritual Launch / Intention Declaration Card -->
+        <div id="altar-ritual-launcher" class="glass-card" style="margin-bottom:1.5rem; border-color:rgba(214,28,56,0.35);">
+          <h3 class="card-title" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+            <span>⚡ Declare Intention & Assemble Ritual</span>
+            <span class="badge-provenance badge-personal">RITUAL ENGINE</span>
+          </h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:1rem;">
+            Transform isolated instruments into persistent ceremony. Declare your sovereign intention, move through ritual chambers, forge enduring artifacts, and seal the record into the Living Seal.
+          </p>
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label for="input-ritual-intent">Primary Ritual Intention / Statement of Will</label>
+            <input type="text" id="input-ritual-intent" class="input-control" placeholder="e.g. I sever external shackles and fortify my sovereign boundaries...">
+          </div>
+          <div class="composition-grid">
+            <div class="composition-card" onclick="app.ritualEngine.startComposition('sever')">
+              <h4>⚔ SEVER</h4>
+              <p>Release, separation, and banishment of unwanted ties, psychic clutter, and external burdens.</p>
+              <div class="composition-stages-preview">Flow: Astrolabe → Banishment → Tarot → Sigil Forge → Sound Focus → Seal</div>
+            </div>
+            <div class="composition-card" onclick="app.ritualEngine.startComposition('invoke')">
+              <h4>🔥 INVOKE</h4>
+              <p>Focused transformation, infernal alignment, sovereign will, and talismanic charging.</p>
+              <div class="composition-stages-preview">Flow: Intention → Solomon Archive → Sigil Forge → Charging → Soundscape → Grimoire → Seal</div>
+            </div>
+            <div class="composition-card" onclick="app.ritualEngine.startComposition('descent')">
+              <h4>🌑 DESCENT</h4>
+              <p>Subconscious shadow reflection, black scrying, underworld trance, and truth integration.</p>
+              <div class="composition-stages-preview">Flow: Shadow Mirror → Tarot Oracle → Dark Scryer → Descent Journey → Grimoire → Seal</div>
+            </div>
+            <div class="composition-card" onclick="app.ritualEngine.startComposition('sovereign')">
+              <h4>👑 SOVEREIGN</h4>
+              <p>Self-possession, unyielding bodily autonomy, philosophical boundary reflection, and blood pact.</p>
+              <div class="composition-stages-preview">Flow: TST Reflection → Sigil Forge → Focus Timer → Blood Pact → Grimoire → Seal</div>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem; flex-wrap:wrap; gap:0.75rem;">
+            <button class="btn btn-outline" onclick="app.ritualEngine.openCustomRitualBuilder()">⚙ Assemble Custom Ritual Composition</button>
+            <button class="btn btn-primary" onclick="app.ritualEngine.startFromInputIntent()">Ignite Ritual with Intention →</button>
+          </div>
+        </div>
+
+        <!-- THE LIVING SEAL CENTERPIECE -->
+        <div class="living-seal-wrapper" id="living-seal-container">
+          <div class="living-seal-aura" id="living-seal-aura"></div>
+          <div style="text-align:center; z-index:3; margin-bottom:0.75rem;">
+            <h2 class="gothic-title-decor" style="font-size:1.6rem; letter-spacing:0.12em; margin-bottom:0.25rem;">The Living Seal</h2>
+            <p style="font-size:0.82rem; color:var(--text-muted); font-family:var(--font-headline); letter-spacing:0.06em;">
+              DETERMINISTIC SACRED GEOMETRY OF YOUR SEALED RITUAL HISTORY
+            </p>
+          </div>
+
+          <!-- SVG Geometry Viewport -->
+          <div id="living-seal-viewport" style="width:100%; max-width:440px; position:relative; z-index:2;">
+            <svg id="living-seal-svg" class="living-seal-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <!-- Generated deterministically by LivingSealEngine -->
+            </svg>
+          </div>
+
+          <!-- Seal Controls & Scrubber -->
+          <div class="living-seal-controls">
+            <div class="seal-scrubber-row">
+              <span style="font-size:0.78rem; font-weight:600; color:var(--text-muted); min-width:85px;">
+                Chronology (<span id="seal-scrubber-val">0</span>/<span id="seal-scrubber-max">0</span>)
+              </span>
+              <input type="range" id="seal-scrubber" class="seal-scrubber" min="0" max="0" value="0" oninput="app.livingSeal.onScrub(this.value)">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+              <div style="display:flex; gap:0.4rem; align-items:center;">
+                <select id="seal-filter-tag" class="input-control" style="width:auto; padding:0.35rem 0.65rem; font-size:0.78rem;" onchange="app.livingSeal.setFilter(this.value)">
+                  <option value="all">All Ritual Types</option>
+                  <option value="sever">Severance Rituals</option>
+                  <option value="invoke">Invocation Rituals</option>
+                  <option value="descent">Descent Rituals</option>
+                  <option value="sovereign">Sovereign Rituals</option>
+                  <option value="custom">Custom Rituals</option>
+                </select>
+                <button class="btn" style="padding:0.35rem 0.65rem; font-size:0.75rem;" onclick="app.livingSeal.resetIsolation()">Reset View</button>
+              </div>
+              <div style="display:flex; gap:0.4rem;">
+                <button class="btn btn-outline" id="btn-export-seal-svg" style="padding:0.35rem 0.65rem; font-size:0.75rem;" onclick="app.livingSeal.exportSVG()">💾 Export SVG</button>
+                <button class="btn btn-outline" id="btn-export-seal-png" style="padding:0.35rem 0.65rem; font-size:0.75rem;" onclick="app.livingSeal.exportPNG()">🖼 Export PNG</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inspector Popover Card -->
+          <div id="seal-inspector-card" class="seal-inspector-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+              <h4 id="seal-inspect-title" style="color:var(--accent-gold); font-family:var(--font-headline); font-size:0.95rem;">Ritual Layer</h4>
+              <span id="seal-inspect-date" style="font-size:0.72rem; color:var(--text-muted);">Timestamp</span>
+            </div>
+            <p id="seal-inspect-intent" style="font-style:italic; font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.5rem;"></p>
+            <div id="seal-inspect-artifacts" style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.5rem;"></div>
+            <div style="display:flex; justify-content:flex-end;">
+              <button class="btn btn-purple" style="font-size:0.75rem; padding:0.3rem 0.6rem;" id="btn-seal-view-grimoire">Inspect in Grimoire →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Ritual Sessions & Meaningful Artifacts -->
+        <div class="grid-2" style="margin-bottom:1.5rem;">
+          <div class="glass-card">
+            <h3 class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+              <span>Recent Sealed Sessions</span>
+              <button class="btn" style="font-size:0.72rem; padding:0.25rem 0.5rem;" onclick="app.switchDomain('grimoire')">View All</button>
+            </h3>
+            <div id="altar-recent-sessions-list" style="display:flex; flex-direction:column; gap:0.5rem;">
+              <p style="font-size:0.85rem; color:var(--text-muted); font-style:italic;">No sealed rituals yet. Declare an intention above to forge your first living seal layer.</p>
+            </div>
+          </div>
+          <div class="glass-card">
+            <h3 class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+              <span>Forged Artifacts Gallery</span>
+              <button class="btn" style="font-size:0.72rem; padding:0.25rem 0.5rem;" onclick="app.switchTab('grimoire-journal')">Open Gallery</button>
+            </h3>
+            <div id="altar-recent-artifacts-list" style="display:flex; flex-direction:column; gap:0.5rem;">
+              <p style="font-size:0.85rem; color:var(--text-muted); font-style:italic;">Artifacts created during rituals (sigils, readings, pacts) appear here.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preserved Reflections & Sovereign Privacy Guarantee -->
         <div class="grid-2">
           <!-- Daily Tenet Widget -->
           <div class="glass-card">
@@ -304,14 +434,140 @@
           </div>
 
           <!-- Sovereign Protection Disclaimer -->
-          <div class="glass-card" style="border-color: rgba(255, 45, 85, 0.15); display: flex; flex-direction: column; justify-content: center;">
+          <div class="glass-card" style="border-color: var(--border-glow); display: flex; flex-direction: column; justify-content: center;">
             <h3 class="card-title" style="color: var(--primary);">
               <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
               Sovereign Privacy Guarantee
             </h3>
             <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);">
-              This app functions entirely client-side. No network queries, no cloud syncing, and zero tracking cookies. Your journals, sigil intentions, and cards are cached locally in your browser sandbox (`localStorage`).
+              Homo Goetia functions 100% client-side with zero external network queries, no cloud telemetry, and zero tracking cookies. All cryptographic encryption executes strictly in your browser via Web Crypto (<code style="color:var(--accent-gold);">crypto.subtle</code>). Your sacred records remain completely sovereign.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOMAIN OVERVIEW TABS -->
+      <!-- ARCHIVE DOMAIN OVERVIEW -->
+      <section id="archive-overview-tab" class="tab-panel">
+        <h2 class="gothic-title-decor">Archive: Historically Sourced Grimoires</h2>
+        <div class="explanation-panel">
+          <h4>Historical Occult Record</h4>
+          <p>The Archive contains historically documented esoteric literature, Solomonic codices, and foundational philosophical texts preserved in the public domain.</p>
+        </div>
+        <div class="domain-chamber-grid">
+          <div class="domain-chamber-card" onclick="app.switchTab('library-solomon')">
+            <div class="domain-chamber-title">📖 Keys of Solomon</div>
+            <div class="domain-chamber-desc">72 Goetic spirits of the Lesser Key, 44 planetary pentacles of the Greater Key, and 72 Shem angels.</div>
+            <span class="badge-provenance badge-archive" style="margin-top:auto;">📜 ARCHIVE</span>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('library-tenets')">
+            <div class="domain-chamber-title">⚖ TST Philosophy</div>
+            <div class="domain-chamber-desc">Seven fundamental tenets of modern satanic philosophy, reason, and bodily autonomy.</div>
+            <span class="badge-provenance badge-archive" style="margin-top:auto;">📜 ARCHIVE</span>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('trivia')">
+            <div class="domain-chamber-title">🕯 Gnosis Trivia</div>
+            <div class="domain-chamber-desc">Examine your depth of knowledge across historical daemonology, medieval lore, and occult history.</div>
+            <span class="badge-provenance badge-archive" style="margin-top:auto;">📜 ARCHIVE</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORGE DOMAIN OVERVIEW -->
+      <section id="forge-overview-tab" class="tab-panel">
+        <h2 class="gothic-title-decor">Forge: Generative & Procedural Creation</h2>
+        <div class="explanation-panel">
+          <h4>Alchemical & Algorithmic Synthesis</h4>
+          <p>The Forge contains generative engines that calculate and synthesize unique seals, alchemical distillations, elemental dice, and entities.</p>
+        </div>
+        <div class="domain-chamber-grid">
+          <div class="domain-chamber-card" onclick="app.switchTab('forge-sigil')">
+            <div class="domain-chamber-title">🔥 Sigil Forge</div>
+            <div class="domain-chamber-desc">Procedural vowel-stripping, sacred letter reduction, and custom vector sigil forging.</div>
+            <span class="badge-provenance badge-forged" style="margin-top:auto;">⚡ FORGED</span>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('grimoire-transmuter')">
+            <div class="domain-chamber-title">🧪 Ritual Transmuter</div>
+            <div class="domain-chamber-desc">Combine classical reagents (sulfur, quicksilver, lead, obsidian) to brew ceremonial elixirs.</div>
+            <span class="badge-provenance badge-forged" style="margin-top:auto;">⚡ FORGED</span>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('forge-dice')">
+            <div class="domain-chamber-title">🎲 Alchemical Dice</div>
+            <div class="domain-chamber-desc">Cast polyhedral elemental dice pools for probabilistic divination and ritual determination.</div>
+            <span class="badge-provenance badge-forged" style="margin-top:auto;">⚡ FORGED</span>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('demonology')">
+            <div class="domain-chamber-title">⛧ Goetic Generator</div>
+            <div class="domain-chamber-desc">Procedurally formulate custom entities based on rank and elemental vectors.</div>
+            <span class="badge-provenance badge-forged" style="margin-top:auto;">⚡ FORGED</span>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('charging')">
+            <div class="domain-chamber-title">⚡ Charging Station</div>
+            <div class="domain-chamber-desc">Focus physical tactile input to energetically charge intentions and active seals.</div>
+            <span class="badge-provenance badge-forged" style="margin-top:auto;">⚡ FORGED</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAMBERS DOMAIN OVERVIEW -->
+      <section id="chambers-overview-tab" class="tab-panel">
+        <h2 class="gothic-title-decor">Chambers: Experiential Ritual Instruments</h2>
+        <div class="explanation-panel">
+          <h4>Sensory, Divinatory & Meditative Spaces</h4>
+          <p>Step into experiential chambers for banishing, divination, acoustic resonance, smoke meditation, scrying, and sexual energy cultivation.</p>
+        </div>
+        <div class="domain-chamber-grid">
+          <div class="domain-chamber-card" onclick="app.switchTab('banish')">
+            <div class="domain-chamber-title">🗡 Banishing Ritual</div>
+            <div class="domain-chamber-desc">Trace the lesser banishing pentagram to cleanse psychic space and fortify your field.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('astrolabe')">
+            <div class="domain-chamber-title">🌌 Black Sun Astrolabe</div>
+            <div class="domain-chamber-desc">Align planetary rings and calculate real-time astrological planetary hours.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('library-tarot')">
+            <div class="domain-chamber-title">🎴 Tarot Oracle</div>
+            <div class="domain-chamber-desc">Cast 3-card Trinity or 5-card Pentagram tarot spreads for infernal guidance.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('sanctum-mixer')">
+            <div class="domain-chamber-title">🎵 Soundscape Mixer</div>
+            <div class="domain-chamber-desc">Synthesize ambient drone, white noise, and binaural heartbeat pulses.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('sanctum-timer')">
+            <div class="domain-chamber-title">⏳ Focus & Edge Timer</div>
+            <div class="domain-chamber-desc">Breath pacing and deep concentration timer for trance and ritual devotion.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('mirror')">
+            <div class="domain-chamber-title">🪞 Shadow Mirror</div>
+            <div class="domain-chamber-desc">Introspective mirror meditation to confront, accept, and integrate shadow self.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('scryer')">
+            <div class="domain-chamber-title">🔮 Dark Scryer</div>
+            <div class="domain-chamber-desc">Black obsidian scrying pool for visions, symbol contemplation, and trance.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('pact')">
+            <div class="domain-chamber-title">🩸 Blood Pact Covenant</div>
+            <div class="domain-chamber-desc">Sign a binding sovereign oath with a spirit or personal declaration of will.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('incense')">
+            <div class="domain-chamber-title">💨 Censer Smoke</div>
+            <div class="domain-chamber-desc">Interactive smoke particle censer for calming sensory presence.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('echoes')">
+            <div class="domain-chamber-title">🔔 Acoustic Nodes</div>
+            <div class="domain-chamber-desc">Resonate harmonic sound frequencies and chord progressions.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('library-journey')">
+            <div class="domain-chamber-title">🗝 Descent Journey</div>
+            <div class="domain-chamber-desc">Multi-stage interactive narrative journey through the subterranean underworld.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('desire-bond')">
+            <div class="domain-chamber-title">⛓ Sovereign Bond</div>
+            <div class="domain-chamber-desc">Forge consensual energetic bonds and ritual devotion contracts.</div>
+          </div>
+          <div class="domain-chamber-card" onclick="app.switchTab('desire-edging')">
+            <div class="domain-chamber-title">⚡ Energy Cultivation</div>
+            <div class="domain-chamber-desc">Advanced focus cycles for erotic energy containment and intentional release.</div>
           </div>
         </div>
       </section>
@@ -366,6 +622,14 @@
                   <input type="radio" name="sigil-style" value="flowing"> Flowing Sigil
                 </label>
               </div>
+            <div class="form-group">
+              <label for="sigil-glow-color">Sigil Energy Color Aura</label>
+              <select id="sigil-glow-color" class="input-control">
+                <option value="crimson">Infernal Crimson (#d61c38)</option>
+                <option value="gold">Alchemical Gold (#c8963e)</option>
+                <option value="violet">Astral Violet (#9867ff)</option>
+                <option value="cyan">Lunar Cyan (#00b4d8)</option>
+              </select>
             </div>
 
             <div class="timer-controls" style="margin-top: 1.5rem; margin-bottom: 0;">
@@ -379,8 +643,9 @@
             <div class="canvas-container">
               <canvas id="sigil-canvas" class="sigil-canvas" width="280" height="280"></canvas>
             </div>
-            <div style="margin-top: 1rem; text-align: center;">
+            <div style="margin-top: 1rem; text-align: center; display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
               <button class="btn" id="btn-download-sigil">💾 Export Transparent PNG</button>
+              <button class="btn btn-primary" id="btn-save-sigil-grimoire">📜 Inscribe to Grimoire</button>
             </div>
           </div>
         </div>
@@ -458,8 +723,17 @@
         <div class="grid-2">
           <!-- Controls -->
           <div class="glass-card">
-            <h3 class="card-title">Reagent Vector</h3>
-            
+            <div class="form-group">
+              <label for="transmute-recipe-preset">Classical Alchemical Recipe Presets</label>
+              <select id="transmute-recipe-preset" class="input-control">
+                <option value="">-- Choose a Preset Recipe --</option>
+                <option value="lead-gold">Oil of the Black Sun (Lead + Gold Leaf)</option>
+                <option value="mercury-nightshade">Elixir of Sovereign Will (Quicksilver + Nightshade)</option>
+                <option value="brimstone-ashes">Flame of Inversion (Brimstone + Ashes)</option>
+                <option value="sulfur-obsidian">Crucible of Mars (Sulfur + Obsidian Shards)</option>
+              </select>
+            </div>
+
             <div class="form-group">
               <label for="reagent-base">Base Reagent</label>
               <select id="reagent-base" class="input-control">
@@ -528,6 +802,7 @@
                 <option value="all">All Categories</option>
                 <option value="goetia">Lesser Key (Goetia Spirits)</option>
                 <option value="pentacles">Greater Key (Pentacles)</option>
+                <option value="shem">Shem HaMephorash (72 Counter-Angels)</option>
               </select>
             </div>
             <div class="solomon-list" id="solomon-entries-list">
@@ -557,7 +832,10 @@
                 <option value="cyan">Cyan Aura (☽)</option>
               </select>
             </div>
-            <button class="btn btn-purple" id="btn-solomon-download-svg">💾 Export Sigil Vector (SVG)</button>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <button class="btn btn-outline" id="btn-solomon-blend-seal">⛧ Blend Dual Seal</button>
+              <button class="btn btn-purple" id="btn-solomon-download-svg">💾 Export Sigil Vector (SVG)</button>
+            </div>
           </div>
         </div>
       </section>
@@ -574,6 +852,14 @@
         </div>
 
         <div class="glass-card">
+          <div class="form-group" style="margin-bottom:1.25rem; max-width:340px;">
+            <label for="tarot-spread-type">Oracle Spread Geometry</label>
+            <select id="tarot-spread-type" class="input-control">
+              <option value="3card">3-Card Trinity (Past / Present / Future)</option>
+              <option value="5card">5-Card Pentagram (Spirit / Fire / Water / Air / Earth)</option>
+            </select>
+          </div>
+
           <div class="tarot-arena">
             <div class="tarot-spread">
               <!-- Card 1 -->
@@ -728,6 +1014,12 @@
           
           <div style="text-align: center; margin-bottom: 1rem;">
             <button class="btn btn-primary" id="btn-toggle-audio">▶ Play Ambient Synth</button>
+          </div>
+          <div style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <button class="btn sound-preset-btn" data-preset="sanctum" style="font-size:0.75rem; padding:0.4rem 0.75rem;">🏛️ Obsidian Sanctum</button>
+            <button class="btn sound-preset-btn" data-preset="crucible" style="font-size:0.75rem; padding:0.4rem 0.75rem;">🔥 Crucible Fire</button>
+            <button class="btn sound-preset-btn" data-preset="evocation" style="font-size:0.75rem; padding:0.4rem 0.75rem;">⛧ Goetic Circle</button>
+            <button class="btn sound-preset-btn" data-preset="astral" style="font-size:0.75rem; padding:0.4rem 0.75rem;">🌌 Astral Void</button>
           </div>
           <p id="audio-mixer-status" style="font-size:0.8rem; color:var(--text-muted); text-align:center; margin-bottom:1rem;">Click Play to activate audio mixer controls.</p>
 
@@ -931,48 +1223,168 @@
         </div>
       </section>
 
-      <!-- PAGE 11: GRIMOIRE JOURNAL -->
+      <!-- PAGE 11: GRIMOIRE JOURNAL & PERSISTENT HISTORY -->
       <section id="grimoire-journal-tab" class="tab-panel">
-        <h2 class="gothic-title-decor">The Sovereign Grimoire</h2>
+        <h2 class="gothic-title-decor">The Sovereign Grimoire & Vault</h2>
 
         <div class="explanation-panel">
-          <h4>What this chamber does</h4>
-          <p>Your journal is your private ledger. Keep records of your ritual focuses, tarot spreads, and personal meditations. You can import/export backups of your grimoire in JSON format.</p>
-          <h4 style="margin-top: 0.5rem;">How to use it</h4>
-          <p>Create a new entry, type your title and details, and click **Save**. Keep backup copies exported regularly. Journal data is saved entirely inside your local browser cache.</p>
+          <h4>Computational Grimoire & Cryptographic Memory</h4>
+          <p>Your Grimoire is the living, persistent repository of all rituals, forged artifacts, meditations, and journal logs. Backed by structured local storage and native Web Crypto, your occult records are completely private, enduring, and exportable.</p>
         </div>
 
-        <div class="glass-card">
-          <div class="grimoire-layout">
-            <!-- Sidebar listing entries -->
-            <div class="grimoire-list-sidebar">
-              <input type="text" id="grimoire-search" class="input-control" placeholder="Search entries..." style="padding: 0.4rem 0.6rem; font-size: 0.8rem; margin-bottom: 0.5rem;">
-              <button class="btn btn-purple" id="btn-grimoire-new" style="font-size: 0.8rem; width: 100%; justify-content: center;">➕ New Entry</button>
-              <div class="grimoire-list" id="grimoire-entries-list">
-                <!-- JS list -->
+        <!-- Grimoire Multi-View Tab Bar -->
+        <div class="grimoire-tabs-bar" id="grimoire-view-selector">
+          <button class="grimoire-tab-btn active" data-grimoire-view="sessions" onclick="app.setGrimoireView('sessions')">⚔ Ritual Sessions</button>
+          <button class="grimoire-tab-btn" data-grimoire-view="artifacts" onclick="app.setGrimoireView('artifacts')">🔮 Artifacts Gallery</button>
+          <button class="grimoire-tab-btn" data-grimoire-view="journal" onclick="app.setGrimoireView('journal')">📓 Journal Entries</button>
+          <button class="grimoire-tab-btn" data-grimoire-view="vault" onclick="app.setGrimoireView('vault')">🔒 Cryptographic Vault</button>
+          <button class="grimoire-tab-btn" data-grimoire-view="timeline" onclick="app.setGrimoireView('timeline')">📜 Chronological Feed</button>
+        </div>
+
+        <!-- VIEW 1: RITUAL SESSIONS -->
+        <div id="grimoire-view-sessions" class="grimoire-view-panel">
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
+              <h3 class="card-title" style="margin-bottom:0;">All Ritual Sessions</h3>
+              <button class="btn btn-primary" onclick="app.switchDomain('altar')">⚡ Start New Ritual</button>
+            </div>
+            <div id="grimoire-sessions-list" style="display:flex; flex-direction:column; gap:0.85rem;">
+              <p style="font-size:0.88rem; color:var(--text-muted); font-style:italic;">No ritual sessions recorded yet. Launch a ceremony on the Altar to begin.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: ARTIFACTS GALLERY -->
+        <div id="grimoire-view-artifacts" class="grimoire-view-panel" style="display:none;">
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Forged Artifacts Gallery</h3>
+              <div style="display:flex; gap:0.5rem;">
+                <select id="artifact-type-filter" class="input-control" style="width:auto; padding:0.35rem 0.65rem; font-size:0.8rem;" onchange="app.filterArtifacts(this.value)">
+                  <option value="all">All Artifact Types</option>
+                  <option value="sigil">Sigils (SVG)</option>
+                  <option value="tarot">Tarot Spreads</option>
+                  <option value="transmute">Alchemical Elixirs</option>
+                  <option value="pact">Signed Blood Pacts</option>
+                </select>
               </div>
             </div>
+            <div id="grimoire-artifacts-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1rem;">
+              <p style="font-size:0.88rem; color:var(--text-muted); font-style:italic;">Forged artifacts from your ritual work will appear here.</p>
+            </div>
+          </div>
+        </div>
 
-            <!-- Main editor -->
-            <div class="grimoire-editor">
-              <input type="text" id="grimoire-title" class="input-control" placeholder="Ritual Entry Title" style="font-family: 'Cinzel', serif; font-weight: bold;">
-              <textarea id="grimoire-content" class="input-control" placeholder="Write details of your fantasies, thoughts, sigil activations, or logs here..." style="flex-grow: 1;"></textarea>
-              
-              <div class="timer-controls" style="margin-top: 0; margin-bottom: 0;">
-                <button class="btn btn-primary" id="btn-grimoire-save">💾 Save Entry</button>
-                <button class="btn btn-danger" id="btn-grimoire-delete">🗑️ Delete Entry</button>
+        <!-- VIEW 3: JOURNAL ENTRIES (Preserved Classic Editor) -->
+        <div id="grimoire-view-journal" class="grimoire-view-panel" style="display:none;">
+          <div class="glass-card">
+            <div class="grimoire-layout">
+              <!-- Sidebar listing entries -->
+              <div class="grimoire-list-sidebar">
+                <input type="text" id="grimoire-search" class="input-control" placeholder="Search entries..." style="padding: 0.4rem 0.6rem; font-size: 0.8rem; margin-bottom: 0.5rem;">
+                <button class="btn btn-purple" id="btn-grimoire-new" style="font-size: 0.8rem; width: 100%; justify-content: center;">➕ New Entry</button>
+                <div class="grimoire-list" id="grimoire-entries-list">
+                  <!-- JS list -->
+                </div>
+              </div>
+
+              <!-- Main editor -->
+              <div class="grimoire-editor">
+                <input type="text" id="grimoire-title" class="input-control" placeholder="Ritual Entry Title" style="font-family: 'Cinzel', serif; font-weight: bold;">
+                <textarea id="grimoire-content" class="input-control" placeholder="Write details of your fantasies, thoughts, sigil activations, or logs here..." style="flex-grow: 1;"></textarea>
+                
+                <div class="timer-controls" style="margin-top: 0; margin-bottom: 0;">
+                  <button class="btn btn-primary" id="btn-grimoire-save">💾 Save Entry</button>
+                  <button class="btn btn-danger" id="btn-grimoire-delete">🗑️ Delete Entry</button>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
-            <button class="btn" id="btn-grimoire-export" style="font-size: 0.75rem; padding: 0.35rem 0.65rem;">📤 Export Grimoire (JSON)</button>
-            <button class="btn" id="btn-grimoire-import-trigger" style="font-size: 0.75rem; padding: 0.35rem 0.65rem;">📥 Import Grimoire</button>
-            <input type="file" id="grimoire-import-file" style="display: none;" accept=".json">
+        <!-- VIEW 4: CRYPTOGRAPHIC VAULT -->
+        <div id="grimoire-view-vault" class="grimoire-view-panel" style="display:none;">
+          <div class="glass-card">
+            <div class="vault-banner">
+              <h3 class="card-title" style="color:var(--primary); display:flex; justify-content:space-between; align-items:center;">
+                <span>🔒 Sovereign Cryptographic Vault</span>
+                <span id="vault-status-badge" class="badge-provenance badge-personal">LOCKED</span>
+              </h3>
+              <p style="font-size:0.88rem; line-height:1.5; color:var(--text-secondary);">
+                Hardened client-side cryptography powered by browser Web Crypto (<code>PBKDF2 SHA-256</code> key derivation with 100,000 iterations and <code>AES-GCM 256-bit</code> authenticated cipher). Passwords are never stored. Decrypted records exist solely in volatile browser memory.
+              </p>
+            </div>
+
+            <div class="grid-2">
+              <div class="glass-card" style="border-color:var(--border-color);">
+                <h4 style="font-family:var(--font-headline); color:var(--accent-gold); margin-bottom:0.75rem;">Vault Access & Master Key</h4>
+                <div class="form-group">
+                  <label for="vault-password-input">Master Key / Password</label>
+                  <input type="password" id="vault-password-input" class="input-control" placeholder="Enter master passphrase...">
+                </div>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+                  <button class="btn btn-primary" id="btn-vault-unlock" onclick="app.vault.handleUnlock()">🔓 Unlock Vault</button>
+                  <button class="btn btn-outline" id="btn-vault-lock" onclick="app.vault.handleLock()">🔒 Lock Vault</button>
+                  <button class="btn btn-purple" id="btn-vault-init" onclick="app.vault.handleInitialize()">🔑 Set/Change Master Key</button>
+                </div>
+                <p id="vault-auth-feedback" style="font-size:0.8rem; margin-top:0.75rem; color:var(--text-muted);"></p>
+              </div>
+
+              <div class="glass-card" style="border-color:var(--border-color);">
+                <h4 style="font-family:var(--font-headline); color:var(--accent-gold); margin-bottom:0.75rem;">Vault Encryption Tool</h4>
+                <div class="form-group">
+                  <label for="vault-plaintext-input">Sensitive Data / Secret Record</label>
+                  <textarea id="vault-plaintext-input" class="input-control" style="height:90px;" placeholder="Sensitive ritual record to encrypt..."></textarea>
+                </div>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">
+                  <button class="btn btn-primary" id="btn-vault-encrypt-act" onclick="app.vault.handleEncryptInput()">🔒 Encrypt to Envelope</button>
+                  <button class="btn btn-purple" id="btn-vault-decrypt-act" onclick="app.vault.handleDecryptInput()">🔓 Decrypt Envelope</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card" style="margin-top:1rem;">
+              <h4 style="font-family:var(--font-headline); color:var(--text-primary); margin-bottom:0.5rem;">Encrypted Envelope Output</h4>
+              <textarea id="vault-envelope-output" class="input-control" style="height:110px; font-family:var(--font-mono); font-size:0.8rem; background:#060506;" readonly placeholder="Authenticated ciphertext envelope JSON will appear here..."></textarea>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+                <button class="btn btn-outline" id="btn-vault-export-archive" onclick="app.vault.exportEncryptedArchive()">📦 Export Encrypted Vault Archive</button>
+                <button class="btn btn-outline" id="btn-vault-import-trigger" onclick="document.getElementById('vault-import-file').click()">📥 Import Encrypted Archive</button>
+                <input type="file" id="vault-import-file" style="display:none;" accept=".json" onchange="app.vault.importEncryptedArchive(event)">
+              </div>
+            </div>
           </div>
+        </div>
 
+        <!-- VIEW 5: CHRONOLOGICAL TIMELINE -->
+        <div id="grimoire-view-timeline" class="grimoire-view-panel" style="display:none;">
+          <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
+              <h3 class="card-title" style="margin-bottom:0;">Chronological History</h3>
+              <div style="display:flex; gap:0.4rem; align-items:center;">
+                <input type="text" id="timeline-search-input" class="input-control" placeholder="Search history..." style="padding:0.35rem 0.65rem; font-size:0.8rem; width:180px;" oninput="app.searchTimeline(this.value)">
+              </div>
+            </div>
+            <div id="timeline-entries-feed" style="display:flex; flex-direction:column; gap:0.85rem;">
+              <p style="font-size:0.88rem; color:var(--text-muted); font-style:italic;">Your complete ritual timeline will compile here.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grimoire Global Backup & Export Footer -->
+        <div class="glass-card" style="margin-top:1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items:center; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <span style="font-size:0.85rem; font-weight:600; color:var(--text-primary);">Grimoire Data Management</span>
+              <p style="font-size:0.75rem; color:var(--text-muted);">Plaintext JSON archive export contains your full ritual history and journal records.</p>
+            </div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <button class="btn btn-outline" id="btn-grimoire-export">📤 Export Grimoire (JSON)</button>
+              <button class="btn btn-outline" id="btn-grimoire-import-trigger">📥 Import Grimoire</button>
+              <input type="file" id="grimoire-import-file" style="display: none;" accept=".json">
+            </div>
+          </div>
           <p style="font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem; font-style: italic;">
-            🔒 Grimoire is stored locally in your browser cache. Clear browser cache with caution, or use export/import to backup.
+            🔒 Grimoire is stored securely in IndexedDB with local fallback. Zero network access. Keep regular offline backups.
           </p>
         </div>
       </section>
@@ -1039,14 +1451,23 @@
             <p id="astrolabe-reading" style="font-size:0.9rem; text-align:center; color:var(--text-secondary); line-height:1.5;">Align the sliders to achieve planetary synergy.</p>
           </div>
         </div>
+
+        <div class="glass-card" style="margin-top:1.25rem;" id="planetary-hour-live">
+          <h3 class="card-title">Real-Time Astronomical Planetary Hour</h3>
+          <p id="planetary-hour-clock" style="font-size:1rem; font-weight:600; color:var(--accent-gold); margin-bottom:0.5rem; text-align:center;">Calculating celestial time...</p>
+          <p id="planetary-hour-info" style="font-size:0.85rem; color:var(--text-secondary); text-align:center;">Updates live every 60 seconds.</p>
+        </div>
       </section>
 
       <!-- PAGE 14: GOETIC ENTITY GENERATOR -->
       <section id="demonology-tab" class="tab-panel">
-        <h2 class="gothic-title-decor">Goetic Entity Generator</h2>
+        <h2 class="gothic-title-decor" style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+          <span>Goetic Entity Generator</span>
+          <span class="badge-provenance badge-forged">⚡ FORGED / PROCEDURAL</span>
+        </h2>
         <div class="explanation-panel">
-          <h4>What this chamber does</h4>
-          <p>Procedurally formulate custom entities based on rank and elemental vectors, rendering dynamic names, descriptions, and vector seals.</p>
+          <h4>Algorithmic Daemonological Synthesis</h4>
+          <p>Procedurally formulate custom entities based on rank and elemental vectors, rendering dynamic names, descriptions, and vector seals. <em>Notice: All generated entities and seals here are procedural algorithmic constructs, not historical Goetic grimoire plates.</em></p>
         </div>
         <div class="grid-2">
           <div class="glass-card">
@@ -1078,21 +1499,34 @@
             <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
               <div id="demon-sigil-container" style="width:150px; height:150px; margin-bottom:1rem; border:1px solid var(--border-color); border-radius:50%; padding:0.5rem; background:#060506; display:flex; align-items:center; justify-content:center;"></div>
               <p id="demon-output-desc" style="font-size:0.88rem; text-align:center; color:var(--text-secondary); line-height:1.5;"></p>
+              <button class="btn btn-outline" id="btn-save-demon-artifact" style="margin-top:0.75rem;">📜 Record Spirit into Grimoire</button>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PAGE 15: PRIVATE CIPHER -->
+      <!-- PAGE 15: LEGACY CIPHER DECODER -->
       <section id="cipher-tab" class="tab-panel">
-        <h2 class="gothic-title-decor">Ritual Cryptography Vault</h2>
+        <h2 class="gothic-title-decor">Legacy Cipher Decoder</h2>
+        <div class="legacy-cipher-notice">
+          ⚠️ <strong>Legacy cipher — obfuscation only, not secure encryption.</strong> Retained strictly for backward compatibility with old entries. For modern authenticated encryption (PBKDF2 + AES-GCM), use the <a href="#" onclick="app.switchTab('grimoire-journal'); app.setGrimoireView('vault'); return false;" style="color:var(--text-primary); text-decoration:underline;">Cryptographic Vault</a>.
+        </div>
         <div class="explanation-panel">
-          <h4>What this chamber does</h4>
-          <p>Secure your private grimoire logs with a local cryptographic key. Entries are encrypted directly in your browser using an alchemical password rotation cipher.</p>
+          <h4>Vigenère / XOR Obfuscation Tool</h4>
+          <p>Obfuscate and decode legacy notes using an alchemical password rotation key. Note: This legacy cipher does not provide cryptographic confidentiality.</p>
         </div>
         <div class="grid-2">
           <div class="glass-card">
-            <h3 class="card-title">Cipher Settings</h3>
+            <div class="form-group">
+              <label for="cipher-key-vault">Saved Key Vault</label>
+              <select id="cipher-key-vault" class="input-control">
+                <option value="">-- Choose Key Preset --</option>
+                <option value="SOLOMONIC_OBSIDIAN_KEY">Solomonic Obsidian Key</option>
+                <option value="INFERNAL_TEMPLE_SIGIL">Infernal Temple Sigil Key</option>
+                <option value="SOVEREIGN_WILL_2026">Sovereign Will 2026 Key</option>
+              </select>
+            </div>
+
             <div class="form-group">
               <label for="cipher-key">Cryptographic Key / Phrase</label>
               <input type="text" id="cipher-key" class="input-control" placeholder="e.g. SATANIC_CAT_TEMPLE">
@@ -1137,7 +1571,7 @@
           </div>
           <div class="glass-card" style="display:flex; flex-direction:column; align-items:center;">
             <h3 class="card-title" style="width:100%;">Sign Signature</h3>
-            <div class="canvas-container" style="border:1px dashed var(--primary); padding:0.25rem; border-radius:6px; background:#060506;">
+            <div class="canvas-container" style="border:1px dashed var(--primary); padding:0.25rem; border-radius:var(--radius-md, 8px); background:#060506;">
               <canvas id="pact-canvas" width="280" height="150" style="cursor:crosshair;"></canvas>
             </div>
             <div class="timer-controls" style="margin-top:1.5rem; margin-bottom:0; width:100%;">
@@ -1239,7 +1673,7 @@
               <svg viewBox="0 0 100 100" style="width:100px; height:100px; fill:none; stroke:var(--primary); stroke-width:2; z-index:5;">
                 <polygon points="50,90 20,35 80,35 20,68 80,68" stroke="currentColor" stroke-width="4" fill="none" />
               </svg>
-              <div id="charging-aura" class="charging-aura" style="position:absolute; border-radius:50%; background:radial-gradient(circle, rgba(182,36,255,0.4) 0%, transparent 70%); width:0px; height:0px; pointer-events:none; transition:width 0.1s, height 0.1s; z-index:2;"></div>
+              <div id="charging-aura" class="charging-aura" style="position:absolute; border-radius:50%; background:radial-gradient(circle, rgba(var(--primary-rgb),0.4) 0%, transparent 70%); width:180px; height:180px; transform:scale(0); pointer-events:none; transition:transform 0.1s ease-out, opacity 0.1s ease-out; z-index:2;"></div>
             </div>
             <button class="btn btn-purple" id="btn-charging-hold" style="width:100%; justify-content:center; cursor:pointer;">⚡ Hold to Charge Intention</button>
           </div>
@@ -1425,7 +1859,7 @@
           </div>
           <div class="glass-card">
             <h3 class="card-title">Signature Canvas</h3>
-            <div class="canvas-container" style="border:1px dashed var(--primary); padding:0.25rem; background:#060506; border-radius:6px; margin-bottom:1rem;">
+            <div class="canvas-container" style="border:1px dashed var(--primary); padding:0.25rem; background:#060506; border-radius:var(--radius-md, 8px); margin-bottom:1rem;">
               <canvas id="bond-canvas-new" width="280" height="120" style="cursor:crosshair;"></canvas>
             </div>
             <div class="timer-controls" style="margin-bottom:0;">
@@ -1562,6 +1996,69 @@
       </section>
 
     </main>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-bar" id="mobile-bottom-bar" aria-label="Mobile Domain Navigation">
+    <button class="mobile-bottom-item active" data-domain="altar" onclick="app.switchDomain('altar')">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>Altar</span>
+    </button>
+    <button class="mobile-bottom-item" data-domain="archive" onclick="app.switchDomain('archive')">
+      <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      <span>Archive</span>
+    </button>
+    <button class="mobile-bottom-item" data-domain="forge" onclick="app.switchDomain('forge')">
+      <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+      <span>Forge</span>
+    </button>
+    <button class="mobile-bottom-item" data-domain="chambers" onclick="app.switchDomain('chambers')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+      <span>Chambers</span>
+    </button>
+    <button class="mobile-bottom-item" data-domain="grimoire" onclick="app.switchDomain('grimoire')">
+      <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
+      <span>Grimoire</span>
+    </button>
+  </nav>
+
+  <!-- Chamber Command Palette / Quick Search Modal -->
+  <div id="chamber-palette-modal" class="chamber-palette-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Chamber Command Palette">
+    <div class="chamber-palette-dialog">
+      <div class="chamber-palette-header">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:var(--primary);"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="chamber-palette-input" class="chamber-palette-input" placeholder="Jump directly to any of the 32 chambers... (Esc to close)">
+        <span class="kbd-shortcut" onclick="app.closeChamberPalette()" style="cursor:pointer;">ESC</span>
+      </div>
+      <div class="chamber-palette-list" id="chamber-palette-list">
+        <!-- Populated dynamically with all 32 chambers -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Ritual Builder Modal -->
+  <div id="custom-ritual-modal" class="chamber-palette-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Assemble Custom Ritual">
+    <div class="chamber-palette-dialog" style="max-width:540px;">
+      <div class="chamber-palette-header">
+        <h3 style="font-family:var(--font-headline); font-size:1.05rem; color:var(--text-primary); margin:0;">Assemble Custom Ritual Composition</h3>
+        <button class="btn" style="margin-left:auto; padding:0.2rem 0.5rem;" onclick="app.ritualEngine.closeCustomRitualBuilder()">✕</button>
+      </div>
+      <div style="padding:1.25rem; overflow-y:auto;">
+        <div class="form-group">
+          <label for="custom-ritual-name">Ritual Title</label>
+          <input type="text" id="custom-ritual-name" class="input-control" placeholder="e.g. Rite of the Obsidian Mirror">
+        </div>
+        <div class="form-group">
+          <label for="custom-ritual-intent">Primary Intention Statement</label>
+          <input type="text" id="custom-ritual-intent" class="input-control" placeholder="Declare your sovereign statement of will...">
+        </div>
+        <label style="font-size:0.85rem; font-weight:600; margin-bottom:0.5rem; display:block;">Select Chamber Sequence:</label>
+        <div id="custom-ritual-chamber-selector" style="display:flex; flex-direction:column; gap:0.4rem; max-height:220px; overflow-y:auto; border:1px solid var(--border-color); padding:0.5rem; border-radius:6px; margin-bottom:1rem;">
+          <!-- Checkbox list of 32 chambers -->
+        </div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="app.ritualEngine.startCustomRitual()">⚡ Launch Custom Ritual</button>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>

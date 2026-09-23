@@ -242,19 +242,87 @@ const GOETIA_SPIRITS = [
 ];
 
 const PENTACLES = [
+  // SATURN (7 Pentacles)
   { id: "saturn-1", planet: "Saturn", num: "First", title: "First Pentacle of Saturn", virtue: "Compels spirits of Saturn to obey commands." },
-  { id: "saturn-2", planet: "Saturn", num: "Second", title: "Second Pentacle of Saturn", virtue: "Repels spiritual adversaries." },
-  { id: "saturn-3", planet: "Saturn", num: "Third", title: "Third Pentacle of Saturn", virtue: "Defends against nighttime terrors." },
-  { id: "jupiter-1", planet: "Jupiter", num: "First", title: "First Pentacle of Jupiter", virtue: "Discovers hidden treasures." },
-  { id: "jupiter-2", planet: "Jupiter", num: "Second", title: "Second Pentacle of Jupiter", virtue: "Brings peace, glory, and honor." },
-  { id: "mars-1", planet: "Mars", num: "First", title: "First Pentacle of Mars", virtue: "Invokes courage and strength." },
-  { id: "mars-2", planet: "Mars", num: "Second", title: "Second Pentacle of Mars", virtue: "Heals diseases and targets infections." },
-  { id: "sun-1", planet: "Sun", num: "First", title: "First Pentacle of the Sun", virtue: "Invokes solar spirits and power." },
-  { id: "sun-2", planet: "Sun", num: "Second", title: "Second Pentacle of the Sun", virtue: "Promotes inner nobility." },
-  { id: "venus-1", planet: "Venus", num: "First", title: "First Pentacle of Venus", virtue: "Attracts love and builds friendships." },
-  { id: "mercury-1", planet: "Mercury", num: "First", title: "First Pentacle of Mercury", virtue: "Executes speedy messages." },
-  { id: "moon-1", planet: "Moon", num: "First", title: "First Pentacle of the Moon", virtue: "Opens portals and gates." }
+  { id: "saturn-2", planet: "Saturn", num: "Second", title: "Second Pentacle of Saturn", virtue: "Repels spiritual adversaries and counters curses." },
+  { id: "saturn-3", planet: "Saturn", num: "Third", title: "Third Pentacle of Saturn", virtue: "Defends against nighttime terrors and phantom intrusions." },
+  { id: "saturn-4", planet: "Saturn", num: "Fourth", title: "Fourth Pentacle of Saturn", virtue: "Executes destruction and banishment of hostile forces." },
+  { id: "saturn-5", planet: "Saturn", num: "Fifth", title: "Fifth Pentacle of Saturn", virtue: "Guards against restless spirits and astral entities." },
+  { id: "saturn-6", planet: "Saturn", num: "Sixth", title: "Sixth Pentacle of Saturn", virtue: "Invokes earth spirits and binds chaotic elements." },
+  { id: "saturn-7", planet: "Saturn", num: "Seventh", title: "Seventh Pentacle of Saturn", virtue: "Causes cosmic resonance and structural tremors." },
+
+  // JUPITER (7 Pentacles)
+  { id: "jupiter-1", planet: "Jupiter", num: "First", title: "First Pentacle of Jupiter", virtue: "Discovers hidden treasures and unearths lost knowledge." },
+  { id: "jupiter-2", planet: "Jupiter", num: "Second", title: "Second Pentacle of Jupiter", virtue: "Brings peace, glory, dignity, and spiritual honor." },
+  { id: "jupiter-3", planet: "Jupiter", num: "Third", title: "Third Pentacle of Jupiter", virtue: "Defends against enemy attacks and malicious intent." },
+  { id: "jupiter-4", planet: "Jupiter", num: "Fourth", title: "Fourth Pentacle of Jupiter", virtue: "Grants wealth, abundance, and material prosperity." },
+  { id: "jupiter-5", planet: "Jupiter", num: "Fifth", title: "Fifth Pentacle of Jupiter", virtue: "Grants divine vision and cosmic revelations." },
+  { id: "jupiter-6", planet: "Jupiter", num: "Sixth", title: "Sixth Pentacle of Jupiter", virtue: "Protects against earthly dangers and physical harm." },
+  { id: "jupiter-7", planet: "Jupiter", num: "Seventh", title: "Seventh Pentacle of Jupiter", virtue: "Guards against poverty and restores lost resources." },
+
+  // MARS (7 Pentacles)
+  { id: "mars-1", planet: "Mars", num: "First", title: "First Pentacle of Mars", virtue: "Invokes martial courage, strength, and warrior spirits." },
+  { id: "mars-2", planet: "Mars", num: "Second", title: "Second Pentacle of Mars", virtue: "Heals severe diseases, fevers, and targets infections." },
+  { id: "mars-3", planet: "Mars", num: "Third", title: "Third Pentacle of Mars", virtue: "Overcomes hostile enemies and settles fierce disputes." },
+  { id: "mars-4", planet: "Mars", num: "Fourth", title: "Fourth Pentacle of Mars", virtue: "Grants victory in battle and spiritual warfare." },
+  { id: "mars-5", planet: "Mars", num: "Fifth", title: "Fifth Pentacle of Mars", virtue: "Terrifies foes and compels total submission." },
+  { id: "mars-6", planet: "Mars", num: "Sixth", title: "Sixth Pentacle of Mars", virtue: "Grants invulnerability and turns enemy weapons aside." },
+  { id: "mars-7", planet: "Mars", num: "Seventh", title: "Seventh Pentacle of Mars", virtue: "Raises storms, lightning, and elemental thunder." },
+
+  // SUN (7 Pentacles)
+  { id: "sun-1", planet: "Sun", num: "First", title: "First Pentacle of the Sun", virtue: "Invokes solar spirits and solar majesty." },
+  { id: "sun-2", planet: "Sun", num: "Second", title: "Second Pentacle of the Sun", virtue: "Promotes inner nobility, warmth, and leadership." },
+  { id: "sun-3", planet: "Sun", num: "Third", title: "Third Pentacle of the Sun", virtue: "Brings fame, renown, and public acclaim." },
+  { id: "sun-4", planet: "Sun", num: "Fourth", title: "Fourth Pentacle of the Sun", virtue: "Reveals hidden secrets of nature and alchemy." },
+  { id: "sun-5", planet: "Sun", num: "Fifth", title: "Fifth Pentacle of the Sun", virtue: "Transports the caster across spiritual realms." },
+  { id: "sun-6", planet: "Sun", num: "Sixth", title: "Sixth Pentacle of the Sun", virtue: "Grants spiritual invisibility when sought by foes." },
+  { id: "sun-7", planet: "Sun", num: "Seventh", title: "Seventh Pentacle of the Sun", virtue: "Releases prisoners and breaks astral chains." },
+
+  // VENUS (5 Pentacles)
+  { id: "venus-1", planet: "Venus", num: "First", title: "First Pentacle of Venus", virtue: "Attracts love, affection, and builds lasting friendships." },
+  { id: "venus-2", planet: "Venus", num: "Second", title: "Second Pentacle of Venus", virtue: "Inflames desire, passion, and erotic attraction." },
+  { id: "venus-3", planet: "Venus", num: "Third", title: "Third Pentacle of Venus", virtue: "Attracts lovers and harmonious companions." },
+  { id: "venus-4", planet: "Venus", num: "Fourth", title: "Fourth Pentacle of Venus", virtue: "Compels obedience and devotion in desire." },
+  { id: "venus-5", planet: "Venus", num: "Fifth", title: "Fifth Pentacle of Venus", virtue: "Grants magnetic charm, beauty, and grace." },
+
+  // MERCURY (5 Pentacles)
+  { id: "mercury-1", planet: "Mercury", num: "First", title: "First Pentacle of Mercury", virtue: "Executes speedy messages, travel, and swift communication." },
+  { id: "mercury-2", planet: "Mercury", num: "Second", title: "Second Pentacle of Mercury", virtue: "Grants eloquence, logic, and persuasive rhetoric." },
+  { id: "mercury-3", planet: "Mercury", num: "Third", title: "Third Pentacle of Mercury", virtue: "Discovers hidden knowledge, codes, and ciphers." },
+  { id: "mercury-4", planet: "Mercury", num: "Fourth", title: "Fourth Pentacle of Mercury", virtue: "Reveals secret sciences and alchemical arts." },
+  { id: "mercury-5", planet: "Mercury", num: "Fifth", title: "Fifth Pentacle of Mercury", virtue: "Opens locked doors, vaults, and secret passages." },
+
+  // MOON (6 Pentacles)
+  { id: "moon-1", planet: "Moon", num: "First", title: "First Pentacle of the Moon", virtue: "Opens portals, gateways, and astral pathways." },
+  { id: "moon-2", planet: "Moon", num: "Second", title: "Second Pentacle of the Moon", virtue: "Protects travelers on water and nighttime journeys." },
+  { id: "moon-3", planet: "Moon", num: "Third", title: "Third Pentacle of the Moon", virtue: "Prevents illusions, phantasms, and deceptive visions." },
+  { id: "moon-4", planet: "Moon", num: "Fourth", title: "Fourth Pentacle of the Moon", virtue: "Protects against evil sorcery and harmful spells." },
+  { id: "moon-5", planet: "Moon", num: "Fifth", title: "Fifth Pentacle of the Moon", virtue: "Grants prophetic dreams, visions, and scrying insights." },
+  { id: "moon-6", planet: "Moon", num: "Sixth", title: "Sixth Pentacle of the Moon", virtue: "Raises heavy rains, mists, and tides." }
 ];
+
+const SHEM_ANGELS = Array.from({ length: 72 }, (_, i) => {
+  const names = [
+    "Vehuiah", "Jeliel", "Sitael", "Elemiah", "Mahasiah", "Lelahel", "Achaiah", "Cahetel", "Haziel", "Aladiah",
+    "Lauviah", "Hahaiah", "Jezalel", "Mebahel", "Hariel", "Hakamiah", "Lauviah", "Caliel", "Leuviah", "Pahaliah",
+    "Nelchael", "Jeiaiuel", "Melahel", "Haheuiah", "Nith-Haiah", "Haaiah", "Yerathel", "Seheiah", "Reiyel", "Omael",
+    "Lecabel", "Vasariah", "Yehuiah", "Lehahiah", "Chavakiah", "Menadel", "Aniel", "Haamiah", "Rehael", "Ieiazel",
+    "Hahahel", "Mikael", "Veuliah", "Yelahiah", "Sealiah", "Ariel", "Asaliah", "Mihael", "Vehuel", "Daniel",
+    "Hahasiah", "Imamiah", "Nanael", "Nithael", "Mebahiah", "Poiel", "Nemamiah", "Jeialel", "Harahel", "Mitzrael",
+    "Umabel", "Iah-Hel", "Anauel", "Mehiel", "Damabiah", "Manakel", "Eyael", "Habuhiah", "Rochel", "Jabamiah",
+    "Haiaiuel", "Mumiah"
+  ];
+  const orders = ["Seraphim", "Cherubim", "Thrones", "Dominions", "Powers", "Virtues", "Principalities", "Archangels"];
+  return {
+    id: `shem-${i + 1}`,
+    num: i + 1,
+    name: names[i % names.length],
+    order: orders[i % orders.length],
+    verse: `Psalm ${((i * 3) % 150) + 1}:${(i % 10) + 1}`,
+    goetiaCounterId: i + 1,
+    virtue: `Divine illumination counter-balancing Goetic Spirit #${i + 1} (${GOETIA_SPIRITS[i]?.name || 'Spirit'}).`
+  };
+});
 
 const TENET_QUIZ_SCENARIOS = [
   {
@@ -291,8 +359,1356 @@ const GNOSIS_TRIVIA_QUESTIONS = [
   }
 ];
 
+// ==========================================
+// 1. NATIVE WEB CRYPTO VAULT (PBKDF2 + AES-GCM)
+// ==========================================
+class HomoGoetiaVault {
+  constructor(app) {
+    this.app = app;
+    this.isUnlocked = false;
+    this.cachedKey = null;
+    this.currentSaltBase64 = null;
+    this.currentIterations = 100000;
+  }
+
+  bufferToBase64(buffer) {
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    for (let i = 0; i < bytes.byteLength; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary);
+  }
+
+  base64ToBuffer(base64) {
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+    return bytes.buffer;
+  }
+
+  async deriveKey(passphrase, saltBuffer, iterations = 100000) {
+    const enc = new TextEncoder();
+    const keyMaterial = await window.crypto.subtle.importKey(
+      'raw',
+      enc.encode(passphrase),
+      'PBKDF2',
+      false,
+      ['deriveKey']
+    );
+
+    return await window.crypto.subtle.deriveKey(
+      {
+        name: 'PBKDF2',
+        salt: saltBuffer,
+        iterations: iterations,
+        hash: 'SHA-256'
+      },
+      keyMaterial,
+      { name: 'AES-GCM', length: 256 },
+      false,
+      ['encrypt', 'decrypt']
+    );
+  }
+
+  async initializeVault(passphrase) {
+    if (!passphrase || passphrase.length < 4) {
+      throw new Error("Master passphrase must be at least 4 characters.");
+    }
+    const salt = window.crypto.getRandomValues(new Uint8Array(16));
+    const iterations = 100000;
+    const key = await this.deriveKey(passphrase, salt, iterations);
+
+    const canaryIv = window.crypto.getRandomValues(new Uint8Array(12));
+    const enc = new TextEncoder();
+    const canaryCipher = await window.crypto.subtle.encrypt(
+      { name: 'AES-GCM', iv: canaryIv },
+      key,
+      enc.encode("HOMO_GOETIA_VAULT_VALID")
+    );
+
+    const vaultMeta = {
+      id: "vault_meta",
+      version: 1,
+      kdf: "PBKDF2",
+      hash: "SHA-256",
+      iterations: iterations,
+      salt: this.bufferToBase64(salt),
+      canaryIv: this.bufferToBase64(canaryIv),
+      canaryCipher: this.bufferToBase64(canaryCipher),
+      updatedAt: Date.now()
+    };
+
+    await this.app.storage.saveVaultMeta(vaultMeta);
+    this.cachedKey = key;
+    this.currentSaltBase64 = vaultMeta.salt;
+    this.currentIterations = iterations;
+    this.isUnlocked = true;
+    this.updateUI();
+    return true;
+  }
+
+  async unlock(passphrase) {
+    const vaultMeta = await this.app.storage.getVaultMeta();
+    if (!vaultMeta) {
+      return await this.initializeVault(passphrase);
+    }
+
+    const salt = this.base64ToBuffer(vaultMeta.salt);
+    const iterations = vaultMeta.iterations || 100000;
+    const key = await this.deriveKey(passphrase, salt, iterations);
+
+    try {
+      const canaryIv = this.base64ToBuffer(vaultMeta.canaryIv);
+      const canaryCipher = this.base64ToBuffer(vaultMeta.canaryCipher);
+      const dec = new TextDecoder();
+      const decrypted = await window.crypto.subtle.decrypt(
+        { name: 'AES-GCM', iv: canaryIv },
+        key,
+        canaryCipher
+      );
+      if (dec.decode(decrypted) !== "HOMO_GOETIA_VAULT_VALID") {
+        throw new Error("Invalid password");
+      }
+    } catch (e) {
+      throw new Error("Invalid master passphrase or corrupted vault record.");
+    }
+
+    this.cachedKey = key;
+    this.currentSaltBase64 = vaultMeta.salt;
+    this.currentIterations = iterations;
+    this.isUnlocked = true;
+    this.updateUI();
+    return true;
+  }
+
+  lock() {
+    this.isUnlocked = false;
+    this.cachedKey = null;
+    this.updateUI();
+    const plaintextEl = this.app.safeGet('vault-plaintext-input');
+    if (plaintextEl) plaintextEl.value = '';
+    const passEl = this.app.safeGet('vault-password-input');
+    if (passEl) passEl.value = '';
+  }
+
+  async encrypt(plaintext) {
+    if (!this.isUnlocked || !this.cachedKey) {
+      throw new Error("Vault is locked. Unlock with master passphrase first.");
+    }
+    const iv = window.crypto.getRandomValues(new Uint8Array(12));
+    const enc = new TextEncoder();
+    const ciphertextBuffer = await window.crypto.subtle.encrypt(
+      { name: 'AES-GCM', iv },
+      this.cachedKey,
+      enc.encode(plaintext)
+    );
+
+    return {
+      version: 1,
+      kdf: "PBKDF2",
+      hash: "SHA-256",
+      iterations: this.currentIterations,
+      salt: this.currentSaltBase64,
+      iv: this.bufferToBase64(iv),
+      ciphertext: this.bufferToBase64(ciphertextBuffer),
+      tagLength: 128,
+      timestamp: Date.now()
+    };
+  }
+
+  async decrypt(envelopeInput, overridePassphrase = null) {
+    let envelope = typeof envelopeInput === 'string' ? JSON.parse(envelopeInput) : envelopeInput;
+    if (!envelope || !envelope.ciphertext || !envelope.iv || !envelope.salt) {
+      throw new Error("Invalid encrypted envelope format.");
+    }
+
+    let key = this.cachedKey;
+    if (overridePassphrase) {
+      const salt = this.base64ToBuffer(envelope.salt);
+      key = await this.deriveKey(overridePassphrase, salt, envelope.iterations || 100000);
+    } else if (!this.isUnlocked || !key) {
+      throw new Error("Vault is locked. Unlock vault or provide passphrase.");
+    }
+
+    try {
+      const iv = this.base64ToBuffer(envelope.iv);
+      const ciphertext = this.base64ToBuffer(envelope.ciphertext);
+      const dec = new TextDecoder();
+      const decrypted = await window.crypto.subtle.decrypt(
+        { name: 'AES-GCM', iv },
+        key,
+        ciphertext
+      );
+      return dec.decode(decrypted);
+    } catch (err) {
+      throw new Error("Decryption failed: Incorrect key or corrupted ciphertext.");
+    }
+  }
+
+  updateUI() {
+    const badge = this.app.safeGet('vault-status-badge');
+    const feedback = this.app.safeGet('vault-auth-feedback');
+    if (badge) {
+      if (this.isUnlocked) {
+        badge.textContent = "UNLOCKED";
+        badge.className = "badge-provenance badge-personal";
+        badge.style.color = "var(--accent-gold)";
+        badge.style.borderColor = "var(--accent-gold)";
+      } else {
+        badge.textContent = "LOCKED";
+        badge.className = "badge-provenance badge-forged";
+        badge.style.color = "";
+        badge.style.borderColor = "";
+      }
+    }
+    if (feedback) {
+      feedback.textContent = this.isUnlocked
+        ? "✓ Vault active and unlocked in volatile memory."
+        : "Vault locked. Enter master passphrase to encrypt or decrypt.";
+    }
+  }
+
+  async handleUnlock() {
+    const passInput = this.app.safeGet('vault-password-input');
+    const pass = passInput ? passInput.value.trim() : '';
+    if (!pass) {
+      alert("Please enter a passphrase.");
+      return;
+    }
+    try {
+      await this.unlock(pass);
+      this.app.showToast("Vault unlocked successfully.");
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
+  handleLock() {
+    this.lock();
+    this.app.showToast("Vault locked.");
+  }
+
+  async handleInitialize() {
+    const passInput = this.app.safeGet('vault-password-input');
+    const pass = passInput ? passInput.value.trim() : '';
+    if (!pass) {
+      alert("Enter a master passphrase to set.");
+      return;
+    }
+    try {
+      await this.initializeVault(pass);
+      this.app.showToast("Master key initialized and vault unlocked.");
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
+  async handleEncryptInput() {
+    const textEl = this.app.safeGet('vault-plaintext-input');
+    const outEl = this.app.safeGet('vault-envelope-output');
+    if (!textEl || !outEl) return;
+    const text = textEl.value.trim();
+    if (!text) {
+      alert("Enter sensitive text to encrypt.");
+      return;
+    }
+    try {
+      const envelope = await this.encrypt(text);
+      outEl.value = JSON.stringify(envelope, null, 2);
+      this.app.showToast("Authenticated AES-GCM envelope generated.");
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
+  async handleDecryptInput() {
+    const outEl = this.app.safeGet('vault-envelope-output');
+    const textEl = this.app.safeGet('vault-plaintext-input');
+    if (!outEl || !textEl) return;
+    const raw = outEl.value.trim();
+    if (!raw) {
+      alert("Paste an encrypted envelope JSON into the output box to decrypt.");
+      return;
+    }
+    try {
+      const decrypted = await this.decrypt(raw);
+      textEl.value = decrypted;
+      this.app.showToast("Envelope decrypted successfully.");
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
+  async exportEncryptedArchive() {
+    if (!this.isUnlocked) {
+      alert("Unlock the vault first to generate an encrypted export.");
+      return;
+    }
+    try {
+      const rituals = await this.app.storage.getAllRituals();
+      const artifacts = await this.app.storage.getAllArtifacts();
+      const journal = await this.app.storage.getAllJournalEntries();
+
+      const payload = JSON.stringify({
+        exportedAt: Date.now(),
+        app: "Homo Goetia",
+        version: 2,
+        data: { rituals, artifacts, journal }
+      });
+
+      const encryptedEnvelope = await this.encrypt(payload);
+      const blob = new Blob([JSON.stringify(encryptedEnvelope, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `homo-goetia-encrypted-vault-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      this.app.showToast("Encrypted vault archive exported.");
+    } catch (err) {
+      alert("Export failed: " + err.message);
+    }
+  }
+
+  async importEncryptedArchive(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      try {
+        const envelope = JSON.parse(e.target.result);
+        let decryptedJson = null;
+        if (this.isUnlocked) {
+          try {
+            decryptedJson = await this.decrypt(envelope);
+          } catch (err) {
+            decryptedJson = null;
+          }
+        }
+        if (!decryptedJson) {
+          const pass = prompt("Enter passphrase to decrypt this vault archive:");
+          if (!pass) return;
+          decryptedJson = await this.decrypt(envelope, pass);
+        }
+
+        const parsed = JSON.parse(decryptedJson);
+        if (parsed.data) {
+          if (Array.isArray(parsed.data.rituals)) {
+            for (const r of parsed.data.rituals) await this.app.storage.saveRitual(r);
+          }
+          if (Array.isArray(parsed.data.artifacts)) {
+            for (const a of parsed.data.artifacts) await this.app.storage.saveArtifact(a);
+          }
+          if (Array.isArray(parsed.data.journal)) {
+            for (const j of parsed.data.journal) await this.app.storage.saveJournalEntry(j);
+          }
+        }
+        await this.app.refreshAllGrimoireViews();
+        this.app.showToast("Encrypted archive successfully restored.");
+      } catch (err) {
+        alert("Import failed: " + err.message);
+      }
+    };
+    reader.readAsText(file);
+    event.target.value = '';
+  }
+}
+
+// ==========================================
+// 2. STRUCTURED PERSISTENCE & MIGRATION (INDEXEDDB + FALLBACK)
+// ==========================================
+class HomoGoetiaStorage {
+  constructor(app) {
+    this.app = app;
+    this.dbName = "HomoGoetiaDB";
+    this.dbVersion = 1;
+    this.db = null;
+    this.isIndexedDBAvailable = typeof indexedDB !== 'undefined';
+  }
+
+  async init() {
+    if (this.isIndexedDBAvailable) {
+      try {
+        this.db = await this.openDB();
+      } catch (e) {
+        console.warn("IndexedDB initialization failed, falling back to localStorage:", e);
+        this.db = null;
+      }
+    }
+    await this.checkAndMigrateLegacyData();
+  }
+
+  openDB() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(this.dbName, this.dbVersion);
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => resolve(request.result);
+      request.onupgradeneeded = () => {
+        const db = request.result;
+        if (!db.objectStoreNames.contains("rituals")) {
+          db.createObjectStore("rituals", { keyPath: "id" });
+        }
+        if (!db.objectStoreNames.contains("artifacts")) {
+          db.createObjectStore("artifacts", { keyPath: "id" });
+        }
+        if (!db.objectStoreNames.contains("journal")) {
+          db.createObjectStore("journal", { keyPath: "id" });
+        }
+        if (!db.objectStoreNames.contains("vault")) {
+          db.createObjectStore("vault", { keyPath: "id" });
+        }
+        if (!db.objectStoreNames.contains("settings")) {
+          db.createObjectStore("settings", { keyPath: "key" });
+        }
+      };
+    });
+  }
+
+  async checkAndMigrateLegacyData() {
+    try {
+      const rawLegacy = localStorage.getItem('hg_grimoire_entries');
+      if (rawLegacy) {
+        const legacyEntries = JSON.parse(rawLegacy);
+        if (Array.isArray(legacyEntries) && legacyEntries.length > 0) {
+          const currentJournal = await this.getAllJournalEntries();
+          const existingIds = new Set(currentJournal.map(e => e.id));
+          
+          let migratedCount = 0;
+          for (const item of legacyEntries) {
+            const entryId = item.id || ('legacy-' + (item.date || Date.now()));
+            if (!existingIds.has(entryId)) {
+              await this.saveJournalEntry({
+                id: entryId,
+                title: item.title || 'Untitled Entry',
+                content: item.content || item.body || '',
+                date: item.date || new Date().toLocaleDateString(),
+                createdAt: item.createdAt || Date.now(),
+                provenance: 'PERSONAL',
+                migratedFrom: 'hg_grimoire_entries'
+              });
+              migratedCount++;
+            }
+          }
+          if (migratedCount > 0) {
+            console.log(`Successfully migrated ${migratedCount} legacy entries into Grimoire.`);
+          }
+        }
+      }
+    } catch (err) {
+      console.warn("Legacy migration error:", err);
+    }
+  }
+
+  async getStoreItems(storeName, fallbackKey) {
+    if (this.db) {
+      return new Promise((resolve) => {
+        try {
+          const tx = this.db.transaction(storeName, "readonly");
+          const store = tx.objectStore(storeName);
+          const req = store.getAll();
+          req.onsuccess = () => resolve(req.result || []);
+          req.onerror = () => {
+            const raw = localStorage.getItem(fallbackKey);
+            resolve(raw ? JSON.parse(raw) : []);
+          };
+        } catch (e) {
+          const raw = localStorage.getItem(fallbackKey);
+          resolve(raw ? JSON.parse(raw) : []);
+        }
+      });
+    } else {
+      const raw = localStorage.getItem(fallbackKey);
+      return raw ? JSON.parse(raw) : [];
+    }
+  }
+
+  async putStoreItem(storeName, fallbackKey, item) {
+    try {
+      const raw = localStorage.getItem(fallbackKey);
+      const items = raw ? JSON.parse(raw) : [];
+      const idx = items.findIndex(i => (i.id && i.id === item.id) || (i.key && i.key === item.key));
+      if (idx >= 0) items[idx] = item;
+      else items.unshift(item);
+      localStorage.setItem(fallbackKey, JSON.stringify(items));
+    } catch (e) {}
+
+    if (this.db) {
+      return new Promise((resolve, reject) => {
+        try {
+          const tx = this.db.transaction(storeName, "readwrite");
+          const store = tx.objectStore(storeName);
+          const req = store.put(item);
+          req.onsuccess = () => resolve(true);
+          req.onerror = () => reject(req.error);
+        } catch (e) {
+          resolve(true);
+        }
+      });
+    }
+    return true;
+  }
+
+  async deleteItem(storeName, id) {
+    const fallbackKeys = {
+      rituals: 'hg_rituals_v2',
+      artifacts: 'hg_artifacts_v2',
+      journal: 'hg_journal_v2',
+      vault: 'hg_vault_v2',
+      settings: 'hg_settings_v2'
+    };
+    const fbKey = fallbackKeys[storeName] || `hg_${storeName}_v2`;
+    if (storeName === 'journal') {
+      try {
+        const legacyRaw = localStorage.getItem('hg_grimoire_entries');
+        if (legacyRaw) {
+          const legacy = JSON.parse(legacyRaw).filter(e => e.id !== id);
+          localStorage.setItem('hg_grimoire_entries', JSON.stringify(legacy));
+        }
+      } catch (e) {}
+    }
+    return await this.deleteStoreItem(storeName, fbKey, id);
+  }
+
+  async deleteStoreItem(storeName, fallbackKey, id) {
+    try {
+      const raw = localStorage.getItem(fallbackKey);
+      if (raw) {
+        const items = JSON.parse(raw).filter(i => (i.id !== id && i.key !== id));
+        localStorage.setItem(fallbackKey, JSON.stringify(items));
+      }
+    } catch (e) {}
+
+    if (this.db) {
+      return new Promise((resolve) => {
+        try {
+          const tx = this.db.transaction(storeName, "readwrite");
+          const store = tx.objectStore(storeName);
+          const req = store.delete(id);
+          req.onsuccess = () => resolve(true);
+          req.onerror = () => resolve(false);
+        } catch (e) {
+          resolve(false);
+        }
+      });
+    }
+    return true;
+  }
+
+  async getAllRituals() {
+    const list = await this.getStoreItems("rituals", "hg_rituals_v2");
+    return list.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  }
+  async getSealedRituals() {
+    const list = await this.getAllRituals();
+    return list.filter(r => r.status === 'sealed');
+  }
+  async saveRitual(ritual) {
+    return await this.putStoreItem("rituals", "hg_rituals_v2", ritual);
+  }
+
+  async getAllArtifacts() {
+    const list = await this.getStoreItems("artifacts", "hg_artifacts_v2");
+    return list.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  }
+  async saveArtifact(artifact) {
+    return await this.putStoreItem("artifacts", "hg_artifacts_v2", artifact);
+  }
+
+  async getAllJournalEntries() {
+    const list = await this.getStoreItems("journal", "hg_journal_v2");
+    return list.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+  }
+  async saveJournalEntry(entry) {
+    try {
+      const legacyRaw = localStorage.getItem('hg_grimoire_entries');
+      const legacy = legacyRaw ? JSON.parse(legacyRaw) : [];
+      const idx = legacy.findIndex(e => e.id === entry.id);
+      if (idx >= 0) legacy[idx] = entry;
+      else legacy.unshift(entry);
+      localStorage.setItem('hg_grimoire_entries', JSON.stringify(legacy));
+    } catch (e) {}
+    return await this.putStoreItem("journal", "hg_journal_v2", entry);
+  }
+  async deleteJournalEntry(id) {
+    try {
+      const legacyRaw = localStorage.getItem('hg_grimoire_entries');
+      if (legacyRaw) {
+        const legacy = JSON.parse(legacyRaw).filter(e => e.id !== id);
+        localStorage.setItem('hg_grimoire_entries', JSON.stringify(legacy));
+      }
+    } catch (e) {}
+    return await this.deleteStoreItem("journal", "hg_journal_v2", id);
+  }
+
+  async getVaultMeta() {
+    const items = await this.getStoreItems("vault", "hg_vault_v2");
+    return items.find(i => i.id === "vault_meta") || null;
+  }
+  async saveVaultMeta(meta) {
+    return await this.putStoreItem("vault", "hg_vault_v2", meta);
+  }
+}
+
+// ==========================================
+// 3. THE LIVING SEAL DETERMINISTIC ENGINE
+// ==========================================
+class LivingSealEngine {
+  constructor(app) {
+    this.app = app;
+    this.svgContainer = null;
+    this.sealedRituals = [];
+    this.maxLayers = 0;
+    this.currentScrubIndex = 0;
+    this.activeFilter = "all";
+    this.isolatedRitualId = null;
+  }
+
+  async init() {
+    this.svgContainer = this.app.safeGet('living-seal-svg');
+    await this.refresh();
+  }
+
+  hashString(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash |= 0;
+    }
+    return Math.abs(hash);
+  }
+
+  createPRNG(seed) {
+    let s = seed % 2147483647;
+    if (s <= 0) s += 2147483646;
+    return function() {
+      s = (s * 16807) % 2147483647;
+      return (s - 1) / 2147483646;
+    };
+  }
+
+  async refresh() {
+    this.sealedRituals = await this.app.storage.getSealedRituals();
+    this.sealedRituals.sort((a, b) => (a.sealedAt || a.createdAt || 0) - (b.sealedAt || b.createdAt || 0));
+    
+    this.maxLayers = this.sealedRituals.length;
+    this.currentScrubIndex = this.maxLayers;
+
+    const scrubber = this.app.safeGet('seal-scrubber');
+    const scrubVal = this.app.safeGet('seal-scrubber-val');
+    const scrubMax = this.app.safeGet('seal-scrubber-max');
+    if (scrubber) {
+      scrubber.max = this.maxLayers;
+      scrubber.value = this.maxLayers;
+    }
+    if (scrubVal) scrubVal.textContent = this.maxLayers;
+    if (scrubMax) scrubMax.textContent = this.maxLayers;
+
+    this.render();
+  }
+
+  onScrub(val) {
+    this.currentScrubIndex = parseInt(val, 10);
+    const scrubVal = this.app.safeGet('seal-scrubber-val');
+    if (scrubVal) scrubVal.textContent = this.currentScrubIndex;
+    this.render();
+  }
+
+  setFilter(tag) {
+    this.activeFilter = tag;
+    this.render();
+  }
+
+  isolateRitual(ritualId) {
+    this.isolatedRitualId = ritualId;
+    this.render();
+  }
+
+  resetIsolation() {
+    this.isolatedRitualId = null;
+    this.activeFilter = "all";
+    const filterSelect = this.app.safeGet('seal-filter-tag');
+    if (filterSelect) filterSelect.value = "all";
+    this.render();
+  }
+
+  render() {
+    if (!this.svgContainer) this.svgContainer = this.app.safeGet('living-seal-svg');
+    if (!this.svgContainer) return;
+
+    const cx = 250;
+    const cy = 250;
+
+    let visibleRituals = this.sealedRituals.slice(0, this.currentScrubIndex);
+    if (this.isolatedRitualId) {
+      visibleRituals = visibleRituals.filter(r => r.id === this.isolatedRitualId);
+    } else if (this.activeFilter !== "all") {
+      visibleRituals = visibleRituals.filter(r => r.compositionId === this.activeFilter || (r.tags && r.tags.includes(this.activeFilter)));
+    }
+
+    let innerSVG = `
+      <defs>
+        <radialGradient id="sealCenterGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#d61c38" stop-opacity="0.35" />
+          <stop offset="60%" stop-color="#8014b3" stop-opacity="0.1" />
+          <stop offset="100%" stop-color="#050405" stop-opacity="0" />
+        </radialGradient>
+        <filter id="sealLayerGlow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="2" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <circle cx="${cx}" cy="${cy}" r="220" fill="url(#sealCenterGlow)" />
+
+      <!-- BASE SACRED FOUNDATION (Layer 0) -->
+      <g class="living-seal-base" stroke="var(--border-color)" fill="none">
+        <circle cx="${cx}" cy="${cy}" r="235" stroke="#2b1c28" stroke-width="2" />
+        <circle cx="${cx}" cy="${cy}" r="225" stroke="#d61c38" stroke-width="1.2" stroke-dasharray="4,6" opacity="0.6" />
+        <circle cx="${cx}" cy="${cy}" r="215" stroke="#c8963e" stroke-width="1" opacity="0.4" />
+        <circle cx="${cx}" cy="${cy}" r="50" stroke="#8014b3" stroke-width="1.5" opacity="0.5" />
+        <line x1="${cx}" y1="20" x2="${cx}" y2="480" stroke="#2b1c28" stroke-width="1" stroke-dasharray="2,4" />
+        <line x1="20" y1="${cy}" x2="480" y2="${cy}" stroke="#2b1c28" stroke-width="1" stroke-dasharray="2,4" />
+        <polygon points="${cx},${cy - 45} ${cx + 39},${cy + 22.5} ${cx - 39},${cy + 22.5}" stroke="#d61c38" stroke-width="1" opacity="0.5" />
+        <polygon points="${cx},${cy + 45} ${cx + 39},${cy - 22.5} ${cx - 39},${cy - 22.5}" stroke="#c8963e" stroke-width="1" opacity="0.4" />
+      </g>
+    `;
+
+    visibleRituals.forEach((ritual, idx) => {
+      const layerIndex = idx + 1;
+      const seedString = `${ritual.id}-${ritual.intention || ''}-${ritual.compositionId || ''}-${ritual.createdAt || 0}`;
+      const seed = this.hashString(seedString);
+      const prng = this.createPRNG(seed);
+
+      const radius = 60 + ((idx * 27 + Math.floor(prng() * 15)) % 145);
+      const rotationDeg = Math.floor(prng() * 360);
+      const strokeWidth = 1.2 + (prng() * 0.8);
+      
+      let strokeColor = "#d61c38";
+      if (ritual.compositionId === 'invoke') strokeColor = "#c8963e";
+      else if (ritual.compositionId === 'descent') strokeColor = "#8014b3";
+      else if (ritual.compositionId === 'sovereign') strokeColor = "#d61c38";
+      else if (ritual.compositionId === 'custom') strokeColor = "#00b4d8";
+      else {
+        const colors = ["#d61c38", "#c8963e", "#8014b3", "#00b4d8"];
+        strokeColor = colors[Math.floor(prng() * colors.length)];
+      }
+
+      let numPoints = 5;
+      if (ritual.compositionId === 'sever') numPoints = 6;
+      else if (ritual.compositionId === 'invoke') numPoints = 7;
+      else if (ritual.compositionId === 'descent') numPoints = 8;
+      else if (ritual.compositionId === 'sovereign') numPoints = 5;
+      else numPoints = 4 + (Math.floor(prng() * 6));
+
+      const points = [];
+      const innerPoints = [];
+      const innerRadius = radius * (0.35 + prng() * 0.25);
+
+      for (let p = 0; p < numPoints; p++) {
+        const angle = (p * 2 * Math.PI) / numPoints - (Math.PI / 2) + (rotationDeg * Math.PI / 180);
+        points.push({
+          x: cx + radius * Math.cos(angle),
+          y: cy + radius * Math.sin(angle)
+        });
+        const halfAngle = angle + (Math.PI / numPoints);
+        innerPoints.push({
+          x: cx + innerRadius * Math.cos(halfAngle),
+          y: cy + innerRadius * Math.sin(halfAngle)
+        });
+      }
+
+      const starCoords = [];
+      for (let p = 0; p < numPoints; p++) {
+        starCoords.push(`${points[p].x.toFixed(1)},${points[p].y.toFixed(1)}`);
+        starCoords.push(`${innerPoints[p].x.toFixed(1)},${innerPoints[p].y.toFixed(1)}`);
+      }
+
+      const nodePips = points.map(pt => `<circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="3" fill="${strokeColor}" />`).join('');
+
+      innerSVG += `
+        <g class="living-seal-layer" data-ritual-id="${ritual.id}" data-layer-idx="${layerIndex}" data-intent="${encodeURIComponent(ritual.intention || '')}" data-title="${encodeURIComponent(ritual.title || 'Ritual')}" data-date="${ritual.sealedAt ? new Date(ritual.sealedAt).toLocaleDateString() : ''}" data-comp="${ritual.compositionId || 'custom'}" style="outline:none;">
+          <circle cx="${cx}" cy="${cy}" r="${radius}" stroke="${strokeColor}" stroke-width="0.8" stroke-dasharray="${prng() > 0.5 ? '4,4' : 'none'}" fill="none" opacity="0.45" />
+          <polygon points="${starCoords.join(' ')}" stroke="${strokeColor}" stroke-width="${strokeWidth.toFixed(1)}" fill="none" opacity="0.85" filter="url(#sealLayerGlow)" />
+          ${nodePips}
+        </g>
+      `;
+    });
+
+    this.svgContainer.innerHTML = innerSVG;
+    this.attachLayerInteractivity();
+  }
+
+  attachLayerInteractivity() {
+    const layers = this.svgContainer.querySelectorAll('.living-seal-layer');
+    const card = this.app.safeGet('seal-inspector-card');
+    const titleEl = this.app.safeGet('seal-inspect-title');
+    const dateEl = this.app.safeGet('seal-inspect-date');
+    const intentEl = this.app.safeGet('seal-inspect-intent');
+    const viewGrimoireBtn = this.app.safeGet('btn-seal-view-grimoire');
+
+    layers.forEach(layer => {
+      layer.addEventListener('pointerenter', () => {
+        layer.classList.add('highlighted');
+        const title = decodeURIComponent(layer.getAttribute('data-title') || '');
+        const date = layer.getAttribute('data-date') || '';
+        const intent = decodeURIComponent(layer.getAttribute('data-intent') || '');
+        const comp = layer.getAttribute('data-comp') || '';
+
+        if (card) {
+          card.style.display = 'block';
+          if (titleEl) titleEl.textContent = `Layer: ${title} (${comp.toUpperCase()})`;
+          if (dateEl) dateEl.textContent = date;
+          if (intentEl) intentEl.textContent = intent ? `"${intent}"` : "No statement declared.";
+          if (viewGrimoireBtn) {
+            viewGrimoireBtn.onclick = () => {
+              this.app.switchTab('grimoire-journal');
+              this.app.setGrimoireView('sessions');
+            };
+          }
+        }
+      });
+
+      layer.addEventListener('pointerleave', () => {
+        layer.classList.remove('highlighted');
+      });
+
+      layer.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const ritualId = layer.getAttribute('data-ritual-id');
+        this.isolateRitual(ritualId);
+      });
+    });
+  }
+
+  getExportSVG() {
+    if (!this.svgContainer) this.svgContainer = this.app.safeGet('living-seal-svg');
+    return this.svgContainer ? new XMLSerializer().serializeToString(this.svgContainer) : '';
+  }
+
+  exportSVG() {
+    if (!this.svgContainer) return;
+    const svgData = new XMLSerializer().serializeToString(this.svgContainer);
+    const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `homo-goetia-living-seal-${Date.now()}.svg`;
+    a.click();
+    URL.revokeObjectURL(url);
+    this.app.showToast("Living Seal exported as SVG vector.");
+  }
+
+  exportPNG() {
+    if (!this.svgContainer) return;
+    const svgData = new XMLSerializer().serializeToString(this.svgContainer);
+    const canvas = document.createElement('canvas');
+    canvas.width = 1000;
+    canvas.height = 1000;
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(svgBlob);
+
+    img.onload = () => {
+      ctx.fillStyle = '#050405';
+      ctx.fillRect(0, 0, 1000, 1000);
+      ctx.drawImage(img, 0, 0, 1000, 1000);
+      URL.revokeObjectURL(url);
+      const pngUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = pngUrl;
+      a.download = `homo-goetia-living-seal-${Date.now()}.png`;
+      a.click();
+      this.app.showToast("Living Seal exported as high-res PNG.");
+    };
+    img.src = url;
+  }
+}
+
+// ==========================================
+// 4. RITUAL SESSION ENGINE & COMPOSITIONS
+// ==========================================
+class RitualSessionEngine {
+  constructor(app) {
+    this.app = app;
+    this.activeRitual = null;
+    this.compositions = {
+      sever: {
+        title: "Severance & Void Banishment",
+        stages: [
+          { toolId: "astrolabe", title: "Black Sun Astrolabe (Planetary Alignment)" },
+          { toolId: "banish", title: "Banishing Pentagram (Cleanse Sanctum)" },
+          { toolId: "library-tarot", title: "Tarot Oracle (Severance Inquest)" },
+          { toolId: "forge-sigil", title: "Sigil Forge (Sigil of Severing)" },
+          { toolId: "sanctum-mixer", title: "Soundscape Focus (Resonant Dissolution)" }
+        ],
+        tags: ["banishment", "severance", "saturn"]
+      },
+      invoke: {
+        title: "Invocation & Sovereign Will",
+        stages: [
+          { toolId: "library-solomon", title: "Solomonic Keys (Daemon Alignment)" },
+          { toolId: "forge-sigil", title: "Sigil Forge (Synthesize Talisman)" },
+          { toolId: "charging", title: "Charging Station (Will Induction)" },
+          { toolId: "sanctum-mixer", title: "Soundscape Mixer (Chamber Frequency)" },
+          { toolId: "grimoire-journal", title: "Grimoire Vow (Invocatory Log)" }
+        ],
+        tags: ["invocation", "will", "goetia"]
+      },
+      descent: {
+        title: "Descent into the Shadow Crypt",
+        stages: [
+          { toolId: "mirror", title: "Shadow Mirror (Introspection)" },
+          { toolId: "library-tarot", title: "Tarot Oracle (Subconscious Query)" },
+          { toolId: "scryer", title: "Dark Scryer (Obsidian Pool)" },
+          { toolId: "library-journey", title: "Descent Journey (Crypt Trials)" },
+          { toolId: "grimoire-journal", title: "Grimoire Integration (Truth Ledger)" }
+        ],
+        tags: ["shadow", "scrying", "descent"]
+      },
+      sovereign: {
+        title: "Sovereign Possession & Bodily Autonomy",
+        stages: [
+          { toolId: "library-tenets", title: "TST Tenets (Autonomy Reflection)" },
+          { toolId: "forge-sigil", title: "Sigil Forge (Sovereign Mark)" },
+          { toolId: "sanctum-timer", title: "Focus & Edge Timer (Will Cultivation)" },
+          { toolId: "pact", title: "Blood Pact (Covenant of Self-Rule)" },
+          { toolId: "grimoire-journal", title: "Grimoire Ledger (Sovereign Seal)" }
+        ],
+        tags: ["sovereignty", "autonomy", "pact"]
+      }
+    };
+  }
+
+  async init() {
+    const rituals = await this.app.storage.getAllRituals();
+    const active = rituals.find(r => r.status === 'active' || r.status === 'paused');
+    if (active) {
+      this.activeRitual = active;
+      this.renderActiveBanner();
+    }
+  }
+
+  async startComposition(compId, customIntent = null) {
+    const comp = this.compositions[compId];
+    if (!comp) return;
+
+    const intentInput = this.app.safeGet('input-ritual-intent');
+    const intent = customIntent || (intentInput ? intentInput.value.trim() : '') || "I declare my sovereign intention.";
+
+    const session = {
+      id: "ritual-" + Date.now() + "-" + Math.random().toString(36).slice(2, 6),
+      schemaVersion: 1,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      sealedAt: null,
+      title: comp.title,
+      intention: intent,
+      compositionId: compId,
+      status: "active",
+      currentStageIndex: 0,
+      stages: comp.stages.map((st, i) => ({
+        id: `stage-${i + 1}`,
+        toolId: st.toolId,
+        title: st.title,
+        status: i === 0 ? "current" : "pending",
+        result: null,
+        artifactId: null
+      })),
+      artifacts: [],
+      tags: comp.tags || [],
+      relationships: [],
+      notes: "",
+      provenance: "PERSONAL"
+    };
+
+    this.activeRitual = session;
+    await this.app.storage.saveRitual(session);
+    this.renderActiveBanner();
+    this.app.showToast(`Ritual started: ${session.title}`);
+    this.goToCurrentStage();
+  }
+
+  async startFromInputIntent() {
+    const intentInput = this.app.safeGet('input-ritual-intent');
+    const intent = intentInput ? intentInput.value.trim() : '';
+    if (!intent) {
+      alert("Please declare your primary intention statement first.");
+      return;
+    }
+    await this.startComposition('sever', intent);
+  }
+
+  openCustomRitualBuilder() {
+    const modal = this.app.safeGet('custom-ritual-modal');
+    const listEl = this.app.safeGet('custom-ritual-chamber-selector');
+    if (!modal || !listEl) return;
+
+    listEl.innerHTML = '';
+    this.app.chamberPalette.chambers.forEach(c => {
+      const row = document.createElement('label');
+      row.style.display = 'flex';
+      row.style.alignItems = 'center';
+      row.style.gap = '0.5rem';
+      row.style.fontSize = '0.85rem';
+      row.style.cursor = 'pointer';
+      row.innerHTML = `
+        <input type="checkbox" value="${c.id}" data-title="${c.name}">
+        <span>${c.name} <em style="font-size:0.75rem; color:var(--text-muted);">(${c.domain.toUpperCase()})</em></span>
+      `;
+      listEl.appendChild(row);
+    });
+
+    modal.classList.add('open');
+  }
+
+  closeCustomRitualBuilder() {
+    const modal = this.app.safeGet('custom-ritual-modal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  async startCustomRitual() {
+    const titleInput = this.app.safeGet('custom-ritual-name');
+    const intentInput = this.app.safeGet('custom-ritual-intent');
+    const checkboxes = document.querySelectorAll('#custom-ritual-chamber-selector input[type="checkbox"]:checked');
+
+    const title = titleInput ? titleInput.value.trim() : 'Custom Ritual';
+    const intent = intentInput ? intentInput.value.trim() : 'Sovereign custom ceremony.';
+    
+    if (checkboxes.length === 0) {
+      alert("Please select at least one chamber for your ritual flow.");
+      return;
+    }
+
+    const stages = Array.from(checkboxes).map((cb, idx) => ({
+      id: `stage-${idx + 1}`,
+      toolId: cb.value,
+      title: cb.getAttribute('data-title') || cb.value,
+      status: idx === 0 ? "current" : "pending",
+      result: null,
+      artifactId: null
+    }));
+
+    const session = {
+      id: "ritual-" + Date.now() + "-" + Math.random().toString(36).slice(2, 6),
+      schemaVersion: 1,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      sealedAt: null,
+      title: title || "Custom Ceremony",
+      intention: intent,
+      compositionId: "custom",
+      status: "active",
+      currentStageIndex: 0,
+      stages: stages,
+      artifacts: [],
+      tags: ["custom", "ceremony"],
+      relationships: [],
+      notes: "",
+      provenance: "PERSONAL"
+    };
+
+    this.activeRitual = session;
+    await this.app.storage.saveRitual(session);
+    this.closeCustomRitualBuilder();
+    this.renderActiveBanner();
+    this.app.showToast("Custom ritual assembled.");
+    this.goToCurrentStage();
+  }
+
+  goToCurrentStage() {
+    if (!this.activeRitual) return;
+    const stage = this.activeRitual.stages[this.activeRitual.currentStageIndex];
+    if (stage) {
+      this.app.switchTab(stage.toolId);
+    }
+  }
+
+  async completeCurrentStage(resultSummary = null) {
+    if (!this.activeRitual) return;
+    const idx = this.activeRitual.currentStageIndex;
+    const stage = this.activeRitual.stages[idx];
+    if (stage) {
+      stage.status = "completed";
+      stage.result = resultSummary || "Completed";
+    }
+
+    if (idx + 1 < this.activeRitual.stages.length) {
+      this.activeRitual.currentStageIndex++;
+      this.activeRitual.stages[this.activeRitual.currentStageIndex].status = "current";
+      await this.app.storage.saveRitual(this.activeRitual);
+      this.renderActiveBanner();
+      this.app.showToast(`Stage ${idx + 1} completed. Proceeding to Stage ${idx + 2}.`);
+      this.goToCurrentStage();
+    } else {
+      await this.app.storage.saveRitual(this.activeRitual);
+      this.renderActiveBanner();
+      this.app.showToast("All ritual stages finished! Seal the ceremony to forge its layer.");
+      this.app.switchDomain('altar');
+    }
+  }
+
+  async skipCurrentStage() {
+    if (!this.activeRitual) return;
+    const idx = this.activeRitual.currentStageIndex;
+    if (this.activeRitual.stages[idx]) {
+      this.activeRitual.stages[idx].status = "skipped";
+    }
+    if (idx + 1 < this.activeRitual.stages.length) {
+      this.activeRitual.currentStageIndex++;
+      this.activeRitual.stages[this.activeRitual.currentStageIndex].status = "current";
+      await this.app.storage.saveRitual(this.activeRitual);
+      this.renderActiveBanner();
+      this.goToCurrentStage();
+    } else {
+      await this.app.storage.saveRitual(this.activeRitual);
+      this.renderActiveBanner();
+      this.app.switchDomain('altar');
+    }
+  }
+
+  async togglePause() {
+    if (!this.activeRitual) return;
+    if (this.activeRitual.status === 'active') {
+      this.activeRitual.status = 'paused';
+      this.app.showToast("Ritual paused.");
+    } else {
+      this.activeRitual.status = 'active';
+      this.app.showToast("Ritual resumed.");
+    }
+    await this.app.storage.saveRitual(this.activeRitual);
+    this.renderActiveBanner();
+  }
+
+  async sealActiveRitual() {
+    if (!this.activeRitual) return;
+    this.activeRitual.status = "sealed";
+    this.activeRitual.sealedAt = Date.now();
+    this.activeRitual.updatedAt = Date.now();
+
+    this.activeRitual.stages.forEach(st => {
+      if (st.status === 'pending' || st.status === 'current') st.status = 'completed';
+    });
+
+    await this.app.storage.saveRitual(this.activeRitual);
+    const sealed = this.activeRitual;
+    this.activeRitual = null;
+
+    this.renderActiveBanner();
+    await this.app.livingSeal.refresh();
+    await this.app.refreshAllGrimoireViews();
+
+    this.app.showToast(`⛧ Ritual Sealed: "${sealed.title}". Living Seal expanded.`);
+    this.app.switchDomain('altar');
+  }
+
+  renderActiveBanner() {
+    const banner = this.app.safeGet('altar-active-ritual-banner');
+    const launcher = this.app.safeGet('altar-ritual-launcher');
+    const titleEl = this.app.safeGet('active-ritual-title');
+    const statusEl = this.app.safeGet('active-ritual-status');
+    const intentEl = this.app.safeGet('active-ritual-intent');
+    const stagesEl = this.app.safeGet('active-ritual-stages');
+    const pauseBtn = this.app.safeGet('btn-ritual-pause');
+
+    if (!this.activeRitual) {
+      if (banner) banner.style.display = 'none';
+      if (launcher) launcher.style.display = 'block';
+      return;
+    }
+
+    if (banner) banner.style.display = 'flex';
+    if (launcher) launcher.style.display = 'none';
+
+    if (titleEl) titleEl.textContent = this.activeRitual.title;
+    if (statusEl) {
+      statusEl.textContent = this.activeRitual.status.toUpperCase();
+      statusEl.className = this.activeRitual.status === 'active' ? 'badge-provenance badge-personal' : 'badge-provenance badge-archive';
+    }
+    if (intentEl) intentEl.textContent = `"${this.activeRitual.intention}"`;
+    if (pauseBtn) pauseBtn.textContent = this.activeRitual.status === 'paused' ? '▶ Resume' : '⏸ Pause';
+
+    if (stagesEl) {
+      stagesEl.innerHTML = this.activeRitual.stages.map((st, i) => {
+        let cls = 'ritual-stage-node';
+        if (st.status === 'completed') cls += ' completed';
+        else if (i === this.activeRitual.currentStageIndex) cls += ' current';
+        return `<span class="${cls}">${i + 1}. ${st.title}</span>`;
+      }).join('');
+    }
+  }
+
+  async recordArtifact(type, title, data, metadata = {}) {
+    const artifact = {
+      id: "art-" + Date.now() + "-" + Math.random().toString(36).slice(2, 6),
+      ritualId: this.activeRitual ? this.activeRitual.id : null,
+      type: type,
+      title: title,
+      data: data,
+      metadata: metadata,
+      createdAt: Date.now(),
+      provenance: "PERSONAL"
+    };
+
+    await this.app.storage.saveArtifact(artifact);
+
+    if (this.activeRitual) {
+      this.activeRitual.artifacts.push(artifact);
+      await this.app.storage.saveRitual(this.activeRitual);
+      const currentStage = this.activeRitual.stages[this.activeRitual.currentStageIndex];
+      if (currentStage && currentStage.toolId === this.app.activeTab) {
+        currentStage.artifactId = artifact.id;
+        currentStage.result = `Recorded artifact: ${title}`;
+      }
+      this.renderActiveBanner();
+    }
+
+    await this.app.refreshAltarRecentArtifacts();
+    return artifact;
+  }
+}
+
+// ==========================================
+// 5. CHAMBER COMMAND PALETTE & DIRECT JUMP
+// ==========================================
+class ChamberPalette {
+  constructor(app) {
+    this.app = app;
+    this.chambers = [
+      { id: "altar", name: "The Altar", domain: "altar", desc: "Living Seal, active ritual engine, intention declaration" },
+      { id: "forge-sigil", name: "Sigil Forge", domain: "forge", desc: "Procedural vowel stripper & custom vector sigil forging" },
+      { id: "forge-dice", name: "Alchemical Dice", domain: "forge", desc: "Elemental polyhedral dice pools for divination" },
+      { id: "grimoire-transmuter", name: "Ritual Transmuter", domain: "forge", desc: "Combine alchemical reagents (sulfur, quicksilver, lead)" },
+      { id: "charging", name: "Charging Station", domain: "forge", desc: "Physical holding tactile aura intention charging" },
+      { id: "demonology", name: "Goetic Entity Generator", domain: "forge", desc: "Procedural daemonological formulation" },
+      { id: "library-solomon", name: "Keys of Solomon", domain: "archive", desc: "72 Goetic spirits, 44 pentacles, 72 Shem angels" },
+      { id: "library-tenets", name: "TST Philosophy", domain: "archive", desc: "Seven foundational tenets of satanic reason and compassion" },
+      { id: "trivia", name: "Gnosis Trivia", domain: "archive", desc: "Examine knowledge across daemonology & occult lore" },
+      { id: "banish", name: "Banishing Ritual", domain: "chambers", desc: "Lesser banishing pentagram tracing on vector canvas" },
+      { id: "astrolabe", name: "Black Sun Astrolabe", domain: "chambers", desc: "Astronomical planetary hour calculation & solar dials" },
+      { id: "library-tarot", name: "Tarot Oracle", domain: "chambers", desc: "3-card Trinity & 5-card Pentagram oracle spreads" },
+      { id: "sanctum-mixer", name: "Soundscape Mixer", domain: "chambers", desc: "Synthesize drone, white noise, and pulse heartbeats" },
+      { id: "sanctum-timer", name: "Focus & Edge Timer", domain: "chambers", desc: "Box-breathing guide ring and concentration countdown" },
+      { id: "incense", name: "Censer Smoke", domain: "chambers", desc: "Interactive fluid smoke particle censer" },
+      { id: "echoes", name: "Acoustic Nodes", domain: "chambers", desc: "Interactive harmonic pitch matrix and chord chimes" },
+      { id: "mirror", name: "Shadow Mirror", domain: "chambers", desc: "Dark reflective introspection & shadow integration" },
+      { id: "scryer", name: "Dark Scryer", domain: "chambers", desc: "Obsidian black scrying pool for visions & contemplation" },
+      { id: "pact", name: "Blood Pact Covenant", domain: "chambers", desc: "Sign binding covenant on digital parchment in crimson" },
+      { id: "library-journey", name: "Descent Journey", domain: "chambers", desc: "Narrative underworld interactive crypt adventure" },
+      { id: "grimoire-journal", name: "The Sovereign Grimoire", domain: "grimoire", desc: "Persistent ritual history, artifacts, journal & vault" },
+      { id: "cipher", name: "Legacy Cipher Decoder", domain: "grimoire", desc: "Legacy Vigenère/XOR rotation obfuscation decoder" },
+      { id: "smoke-serpent", name: "Smoke: Serpent of Wisdom", domain: "chambers", desc: "Gnostic serpent smoke stream" },
+      { id: "smoke-brimstone", name: "Smoke: Brimstone Crucible", domain: "chambers", desc: "Deep alchemical brimstone fumes" },
+      { id: "smoke-dragon", name: "Smoke: Dragon Breath", domain: "chambers", desc: "Martian fire smoke exhalation" },
+      { id: "smoke-transmute", name: "Smoke: Alchemical Transmutation", domain: "chambers", desc: "Shifting vapor transmutation" },
+      { id: "smoke-banish", name: "Smoke: Void Banishment", domain: "chambers", desc: "Purifying void smoke dispersal" },
+      { id: "desire-bond", name: "Sovereign Bond", domain: "chambers", desc: "Consensual devotion covenant & energetic binding" },
+      { id: "desire-shadow", name: "Sovereign Shadow", domain: "chambers", desc: "Erotic shadow integration and boundary affirmation" },
+      { id: "desire-astrolabe", name: "Sovereign Astrolabe", domain: "chambers", desc: "Desire transit alignment & lunar conjunction" },
+      { id: "desire-devotion", name: "Sovereign Devotion", domain: "chambers", desc: "Sacred repetitive devotional loop" },
+      { id: "desire-edging", name: "Sovereign Energy Cultivation", domain: "chambers", desc: "Advanced sexual energy retention & focus loop" }
+    ];
+  }
+
+  init() {
+    const input = this.app.safeGet('chamber-palette-input');
+    if (input) {
+      input.addEventListener('input', () => this.renderList(input.value));
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') this.close();
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        this.open();
+      }
+    });
+
+    const modal = this.app.safeGet('chamber-palette-modal');
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) this.close();
+      });
+    }
+  }
+
+  open() {
+    const modal = this.app.safeGet('chamber-palette-modal');
+    const input = this.app.safeGet('chamber-palette-input');
+    if (!modal) return;
+    modal.classList.add('open');
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+    this.renderList('');
+  }
+
+  close() {
+    const modal = this.app.safeGet('chamber-palette-modal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  renderList(query) {
+    const listEl = this.app.safeGet('chamber-palette-list');
+    if (!listEl) return;
+    const q = query.toLowerCase().trim();
+    const filtered = this.chambers.filter(c => 
+      c.name.toLowerCase().includes(q) ||
+      c.desc.toLowerCase().includes(q) ||
+      c.domain.toLowerCase().includes(q)
+    );
+
+    listEl.innerHTML = '';
+    if (filtered.length === 0) {
+      listEl.innerHTML = `<div style="padding:1rem; text-align:center; color:var(--text-muted);">No chambers found matching "${query}".</div>`;
+      return;
+    }
+
+    filtered.forEach(c => {
+      const item = document.createElement('div');
+      item.className = 'chamber-palette-item';
+      item.setAttribute('tabindex', '0');
+      item.innerHTML = `
+        <div>
+          <div class="chamber-palette-item-name">${c.name}</div>
+          <div class="chamber-palette-item-desc">${c.desc}</div>
+        </div>
+        <span class="chamber-palette-item-domain">${c.domain.toUpperCase()}</span>
+      `;
+      item.addEventListener('click', () => {
+        this.app.switchTab(c.id);
+        this.close();
+      });
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          this.app.switchTab(c.id);
+          this.close();
+        }
+      });
+      listEl.appendChild(item);
+    });
+  }
+}
+
 class InfernalTempleApp {
   constructor() {
+    this.storage = new HomoGoetiaStorage(this);
+    this.vault = new HomoGoetiaVault(this);
+    this.livingSeal = new LivingSealEngine(this);
+    this.ritualEngine = new RitualSessionEngine(this);
+    this.chamberPalette = new ChamberPalette(this);
+    this.currentGrimoireView = 'sessions';
+
     this.activeTab = 'altar';
     this.currentTenetIndex = 2;
     this.grimoireEntries = [];
@@ -406,7 +1822,15 @@ class InfernalTempleApp {
     }
   }
 
-  init() {
+  async init() {
+    await this.storage.init();
+    this.vault.updateUI();
+    this.chamberPalette.init();
+    await this.ritualEngine.init();
+    await this.livingSeal.init();
+    await this.refreshAltarRecentSessions();
+    await this.refreshAltarRecentArtifacts();
+
     this.initPortalEntrance();
     this.initNavigation();
     this.initGrimoire();
@@ -437,10 +1861,105 @@ class InfernalTempleApp {
 
     this.cycleTenet();
     this.initVisibilityAPI();
+    this.initCollapsiblePanels();
+    this.initDrippingEffect();
+  }
+
+  initDrippingEffect() {
+    const canvas = this.safeGet('drip-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', resize);
+    resize();
+
+    const colors = ['rgba(214, 28, 56, 0.85)', 'rgba(158, 16, 38, 0.75)', 'rgba(89, 10, 22, 0.65)'];
+    const maxDrops = window.innerWidth < 768 ? 10 : 22;
+
+    const createDrop = (initialY = null) => ({
+      x: Math.random() * canvas.width,
+      y: initialY !== null ? initialY : -10 - Math.random() * 50,
+      length: 12 + Math.random() * 28,
+      width: 1.5 + Math.random() * 2.2,
+      speed: 0.8 + Math.random() * 1.8,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: 0.4 + Math.random() * 0.5,
+      splatRadius: 0,
+      maxSplatRadius: 3 + Math.random() * 5,
+      isSplatting: false
+    });
+
+    const drops = Array.from({ length: maxDrops }, () => createDrop(Math.random() * canvas.height));
+
+    const render = () => {
+      requestAnimationFrame(render);
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      drops.forEach((d, i) => {
+        if (!d.isSplatting) {
+          d.y += d.speed;
+
+          // Draw dripping viscous line + droplet head
+          ctx.strokeStyle = d.color;
+          ctx.lineWidth = d.width;
+          ctx.beginPath();
+          ctx.moveTo(d.x, d.y - d.length);
+          ctx.lineTo(d.x, d.y);
+          ctx.stroke();
+
+          // Droplet bulb
+          ctx.fillStyle = d.color;
+          ctx.beginPath();
+          ctx.arc(d.x, d.y, d.width * 1.3, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Check bottom boundary or random terminal point
+          if (d.y >= canvas.height || (d.y > canvas.height * 0.8 && Math.random() < 0.002)) {
+            d.isSplatting = true;
+          }
+        } else {
+          // Expand ripple splat
+          d.splatRadius += 0.4;
+          const splatAlpha = Math.max(0, d.alpha * (1 - d.splatRadius / d.maxSplatRadius));
+          ctx.strokeStyle = `rgba(214, 28, 56, ${splatAlpha})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.ellipse(d.x, d.y, d.splatRadius * 1.8, d.splatRadius * 0.6, 0, 0, Math.PI * 2);
+          ctx.stroke();
+
+          if (d.splatRadius >= d.maxSplatRadius) {
+            drops[i] = createDrop();
+          }
+        }
+      });
+    };
+
+    render();
+  }
+
+  initCollapsiblePanels() {
+    document.addEventListener('click', (e) => {
+      const heading = e.target.closest('.explanation-panel h4:first-child');
+      if (heading) {
+        const panel = heading.closest('.explanation-panel');
+        if (panel) {
+          panel.classList.toggle('collapsed');
+        }
+      }
+    });
   }
 
   // ==========================================
-  // TAB NAVIGATION & ROUTING
+  // DOMAIN & TAB NAVIGATION & ROUTING
   // ==========================================
   initNavigation() {
     const navItems = document.querySelectorAll('.nav-item');
@@ -464,16 +1983,153 @@ class InfernalTempleApp {
       overlay.addEventListener('click', closeMobileMenu);
     }
 
+    // Sidebar navigation items
     navItems.forEach(item => {
       item.addEventListener('click', () => {
         const tab = item.getAttribute('data-tab');
-        this.switchTab(tab);
+        const domain = item.getAttribute('data-domain-nav');
+        if (domain) {
+          this.switchDomain(domain);
+        } else if (tab) {
+          this.switchTab(tab);
+        }
         closeMobileMenu();
       });
     });
+
+    // Top domain navigation bar
+    document.querySelectorAll('.domain-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const domain = pill.getAttribute('data-domain') || pill.getAttribute('data-domain-nav');
+        if (domain) this.switchDomain(domain);
+      });
+    });
+
+    // Mobile bottom navigation bar
+    document.querySelectorAll('.mobile-bottom-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const domain = item.getAttribute('data-domain') || item.getAttribute('data-domain-mobile');
+        if (domain) this.switchDomain(domain);
+      });
+    });
+
+    // Command palette trigger
+    const openPalette = () => {
+      if (this.chamberPalette) this.chamberPalette.open();
+    };
+    this.safeBind('btn-cmd-palette', 'click', openPalette);
+    this.safeBind('btn-open-palette', 'click', openPalette);
+
+    // Custom ritual builder triggers
+    this.safeBind('btn-open-custom-ritual', 'click', () => {
+      if (this.ritualEngine) this.ritualEngine.openCustomRitualBuilder();
+    });
+    this.safeBind('btn-close-custom-modal', 'click', () => {
+      if (this.ritualEngine) this.ritualEngine.closeCustomRitualBuilder();
+    });
+    this.safeBind('btn-launch-custom-ritual', 'click', () => {
+      if (this.ritualEngine) this.ritualEngine.startCustomRitual();
+    });
+  }
+
+  openChamberPalette() {
+    if (this.chamberPalette) this.chamberPalette.open();
+  }
+
+  closeChamberPalette() {
+    if (this.chamberPalette) this.chamberPalette.close();
+  }
+
+  switchDomain(domain) {
+    document.querySelectorAll('.domain-pill, .mobile-bottom-item, [data-domain], [data-domain-nav]').forEach(el => {
+      const d = el.getAttribute('data-domain') || el.getAttribute('data-domain-nav');
+      if (d) {
+        el.classList.toggle('active', d === domain);
+      }
+    });
+
+    const domainOverviewTabs = {
+      altar: 'altar-tab',
+      archive: 'archive-overview-tab',
+      forge: 'forge-overview-tab',
+      chambers: 'chambers-overview-tab',
+      grimoire: 'grimoire-journal-tab'
+    };
+
+    const targetTab = domainOverviewTabs[domain] || `${domain}-tab`;
+    this.switchTab(targetTab);
+
+    if (domain === 'grimoire') {
+      this.refreshAllGrimoireViews();
+    } else if (domain === 'altar') {
+      this.refreshAltarRecentSessions();
+      this.refreshAltarRecentArtifacts();
+      if (this.livingSeal) this.livingSeal.render();
+    }
   }
 
   switchTab(tabId) {
+    let cleanId = tabId.endsWith('-tab') ? tabId.slice(0, -4) : tabId;
+    
+    const domainAliases = {
+      'archive': 'archive-overview',
+      'forge': 'forge-overview',
+      'chambers': 'chambers-overview',
+      'grimoire': 'grimoire-journal',
+      'altar': 'altar'
+    };
+    if (domainAliases[cleanId]) {
+      cleanId = domainAliases[cleanId];
+    }
+
+    const domainMapping = {
+      'altar': 'altar',
+      'archive-overview': 'archive',
+      'library-solomon': 'archive',
+      'astrolabe': 'archive',
+      'mirror': 'archive',
+      'scryer': 'archive',
+      'trivia': 'archive',
+      'forge-overview': 'forge',
+      'forge-sigil': 'forge',
+      'forge-dice': 'forge',
+      'grimoire-transmuter': 'forge',
+      'demonology': 'forge',
+      'cipher': 'forge',
+      'pact': 'forge',
+      'chambers-overview': 'chambers',
+      'banish': 'chambers',
+      'portal': 'chambers',
+      'library-tarot': 'chambers',
+      'library-journey': 'chambers',
+      'sanctum-mixer': 'chambers',
+      'sanctum-timer': 'chambers',
+      'library-tenets': 'chambers',
+      'censer-smoke': 'chambers',
+      'incense': 'chambers',
+      'echoes': 'chambers',
+      'charging': 'chambers',
+      'smoke-serpent': 'chambers',
+      'smoke-brimstone': 'chambers',
+      'smoke-dragon': 'chambers',
+      'smoke-transmute': 'chambers',
+      'smoke-banish': 'chambers',
+      'desire-bond': 'chambers',
+      'desire-shadow': 'chambers',
+      'desire-astrolabe': 'chambers',
+      'desire-devotion': 'chambers',
+      'desire-edging': 'chambers',
+      'grimoire-journal': 'grimoire'
+    };
+
+    const currentDomain = domainMapping[cleanId] || 'chambers';
+    document.querySelectorAll('.domain-pill, .mobile-bottom-item, [data-domain], [data-domain-nav]').forEach(el => {
+      const d = el.getAttribute('data-domain') || el.getAttribute('data-domain-nav');
+      if (d) {
+        el.classList.toggle('active', d === currentDomain);
+      }
+    });
+
     const updateDOM = () => {
       document.querySelectorAll('.tab-panel').forEach(panel => {
         panel.classList.remove('active');
@@ -482,16 +2138,32 @@ class InfernalTempleApp {
         item.classList.remove('active');
       });
 
-      const activePanel = this.safeGet(`${tabId}-tab`);
-      const activeNavItem = document.querySelector(`.nav-item[data-tab="${tabId}"]`);
+      let activePanel = this.safeGet(`${cleanId}-tab`);
+      if (!activePanel) {
+        activePanel = this.safeGet(cleanId);
+      }
+      if (!activePanel && tabId.endsWith('-tab')) {
+        activePanel = this.safeGet(tabId);
+      }
+
+      const activeNavItem = document.querySelector(`.nav-item[data-tab="${cleanId}"]`) ||
+                            document.querySelector(`.nav-item[data-tab="${tabId}"]`);
       
       if (activePanel) activePanel.classList.add('active');
       if (activeNavItem) activeNavItem.classList.add('active');
       
-      this.activeTab = tabId;
+      this.activeTab = cleanId;
 
-      if (tabId === 'forge-sigil') {
+      if (cleanId === 'forge-sigil') {
         this.drawSigilOnCanvas();
+      }
+      if (cleanId === 'altar') {
+        this.refreshAltarRecentSessions();
+        this.refreshAltarRecentArtifacts();
+        if (this.livingSeal) this.livingSeal.render();
+      }
+      if (cleanId === 'grimoire-journal') {
+        this.refreshAllGrimoireViews();
       }
     };
 
@@ -625,39 +2297,92 @@ class InfernalTempleApp {
 
   drawPortalScreen(ctx, canvas) {
     ctx.save();
-    ctx.fillStyle = '#060506';
+    ctx.fillStyle = '#050405';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const cx = canvas.width / 2;
     const cy = canvas.height / 2;
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Concentric orbits guides
-    ctx.strokeStyle = 'rgba(255, 90, 121, 0.03)';
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.arc(cx, cy, 120, 0, Math.PI*2); ctx.stroke();
-    ctx.beginPath(); ctx.arc(cx, cy, 60, 0, Math.PI*2); ctx.stroke();
+    // Outer sacred Solomon geometry ring
+    ctx.strokeStyle = 'rgba(214, 28, 56, 0.12)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(cx, cy, 140, 0, Math.PI * 2); ctx.stroke();
+    ctx.strokeStyle = 'rgba(200, 150, 62, 0.08)';
+    ctx.beginPath(); ctx.arc(cx, cy, 70, 0, Math.PI * 2); ctx.stroke();
 
-    // Central flame particle loop
-    this.portalFlameFlicker += 0.15;
-    const size = 18 + Math.sin(this.portalFlameFlicker) * 4;
+    if (isReducedMotion) {
+      // Reduced motion: static glowing seal core
+      const grad = ctx.createRadialGradient(cx, cy, 5, cx, cy, 90);
+      grad.addColorStop(0, '#ffffff');
+      grad.addColorStop(0.3, '#d61c38');
+      grad.addColorStop(0.7, '#8014b3');
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(cx, cy, 90, 0, Math.PI * 2); ctx.fill();
+    } else {
+      // Dynamic Overdrive flame and ember physics
+      this.portalFlameFlicker = (this.portalFlameFlicker || 0) + 0.08;
+      const t = this.portalFlameFlicker;
 
-    const grad = ctx.createRadialGradient(cx, cy, 2, cx, cy, size * 2.5);
-    grad.addColorStop(0, '#ffffff');
-    grad.addColorStop(0.2, '#ff5a79');
-    grad.addColorStop(0.6, '#b624ff');
-    grad.addColorStop(1, 'rgba(0,0,0,0)');
+      // Rotating inner triangle seal
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(t * 0.3);
+      ctx.strokeStyle = 'rgba(200, 150, 62, 0.25)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (let i = 0; i < 3; i++) {
+        const angle = (i * 2 * Math.PI) / 3;
+        const rx = Math.cos(angle) * 70;
+        const ry = Math.sin(angle) * 70;
+        if (i === 0) ctx.moveTo(rx, ry);
+        else ctx.lineTo(rx, ry);
+      }
+      ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
 
-    ctx.fillStyle = grad;
-    ctx.beginPath();
-    ctx.arc(cx, cy, size * 2.5, 0, Math.PI*2);
-    ctx.fill();
+      // Swirling embers
+      if (!this.portalEmbers) {
+        this.portalEmbers = Array.from({ length: 24 }, () => ({
+          angle: Math.random() * Math.PI * 2,
+          radius: 20 + Math.random() * 80,
+          speed: 0.02 + Math.random() * 0.03,
+          size: 1.5 + Math.random() * 2.5,
+          alpha: 0.3 + Math.random() * 0.7
+        }));
+      }
 
-    // Trace path drawing
+      this.portalEmbers.forEach((e) => {
+        e.angle += e.speed;
+        e.radius = 20 + Math.sin(e.angle * 2 + t) * 60;
+        const ex = cx + Math.cos(e.angle) * e.radius;
+        const ey = cy + Math.sin(e.angle) * e.radius - (Math.sin(t * 2 + e.angle) * 10);
+        ctx.fillStyle = `rgba(214, 28, 56, ${e.alpha})`;
+        ctx.beginPath(); ctx.arc(ex, ey, e.size, 0, Math.PI * 2); ctx.fill();
+      });
+
+      // Core flame glow
+      const size = 22 + Math.sin(t * 2) * 5;
+      const grad = ctx.createRadialGradient(cx, cy, 2, cx, cy, size * 3);
+      grad.addColorStop(0, '#ffffff');
+      grad.addColorStop(0.2, '#d61c38');
+      grad.addColorStop(0.55, '#8014b3');
+      grad.addColorStop(1, 'rgba(5, 4, 5, 0)');
+
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(cx, cy, size * 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Trace path drawing (User drawing action)
     if (this.portalPoints.length > 1) {
-      ctx.strokeStyle = 'var(--primary)';
-      ctx.lineWidth = 3;
-      ctx.shadowBlur = 12;
-      ctx.shadowColor = 'var(--primary)';
+      ctx.strokeStyle = '#d61c38';
+      ctx.lineWidth = 3.5;
+      ctx.shadowBlur = 14;
+      ctx.shadowColor = '#d61c38';
       ctx.beginPath();
       ctx.moveTo(this.portalPoints[0].x, this.portalPoints[0].y);
       for (let i = 1; i < this.portalPoints.length; i++) {
@@ -806,6 +2531,21 @@ class InfernalTempleApp {
       }
     });
 
+    this.safeBind('btn-save-sigil-grimoire', 'click', async () => {
+      const canvas = this.safeGet('sigil-canvas');
+      const intentInput = this.safeGet('sigil-intent');
+      const intent = intentInput && intentInput.value.trim() ? intentInput.value.trim() : 'Sovereign Sigil';
+      if (canvas) {
+        const dataUrl = canvas.toDataURL('image/png');
+        await this.ritualEngine.recordArtifact('sigil', `Forged Sigil: "${intent}"`, dataUrl, {
+          intent: intent,
+          style: document.querySelector('input[name="sigil-style"]:checked')?.value || 'geometric',
+          glow: this.safeGet('sigil-glow-color')?.value || 'crimson'
+        });
+        this.showToast(`Sigil inscribed to Grimoire: "${intent}"`);
+      }
+    });
+
     const preset = this.safeGet('sigil-preset');
     const intent = this.safeGet('sigil-intent');
 
@@ -917,13 +2657,22 @@ class InfernalTempleApp {
 
     if (pathIndices.length === 0) return;
 
+    const auraEl = this.safeGet('sigil-glow-color');
+    const auraVal = auraEl ? auraEl.value : 'crimson';
+    const auraColors = {
+      crimson: { stroke: 'rgba(214, 28, 56, 0.9)', shadow: 'rgba(214, 28, 56, 0.7)' },
+      gold: { stroke: 'rgba(200, 150, 62, 0.9)', shadow: 'rgba(200, 150, 62, 0.7)' },
+      violet: { stroke: 'rgba(152, 103, 255, 0.9)', shadow: 'rgba(152, 103, 255, 0.7)' },
+      cyan: { stroke: 'rgba(0, 180, 216, 0.9)', shadow: 'rgba(0, 180, 216, 0.7)' }
+    };
+    const activeColor = auraColors[auraVal] || auraColors.crimson;
+
     ctx.lineWidth = 2.5;
     ctx.shadowBlur = 10;
+    ctx.strokeStyle = activeColor.stroke;
+    ctx.shadowColor = activeColor.shadow;
     
     if (style === 'geometric') {
-      ctx.strokeStyle = 'rgba(182, 36, 255, 0.8)';
-      ctx.shadowColor = 'rgba(182, 36, 255, 0.6)';
-      
       ctx.beginPath();
       const firstPt = coordinates[pathIndices[0]];
       ctx.moveTo(firstPt.x, firstPt.y);
@@ -933,9 +2682,6 @@ class InfernalTempleApp {
       ctx.stroke();
     } 
     else if (style === 'runic') {
-      ctx.strokeStyle = 'rgba(229, 169, 59, 0.8)';
-      ctx.shadowColor = 'rgba(229, 169, 59, 0.6)';
-      
       ctx.beginPath();
       ctx.moveTo(cx, cy - 60);
       ctx.lineTo(cx, cy + 60);
@@ -1157,9 +2903,13 @@ class InfernalTempleApp {
         void panel.offsetWidth; // Trigger reflow
         panel.classList.add('slide-up-entry');
       }
-      const spreadRoles = ["Past (Foundation)", "Present (Initiation)", "Future (Resolution)"];
+      const spreadTypeEl = this.safeGet('tarot-spread-type');
+      const is5Card = spreadTypeEl && spreadTypeEl.value === '5card';
+      const spreadRoles = is5Card 
+        ? ["Spirit (Sovereignty)", "Fire (Passion)", "Water (Emotions)", "Air (Intellect)", "Earth (Flesh & Boundary)"]
+        : ["Past (Foundation)", "Present (Initiation)", "Future (Resolution)"];
       
-      this.safeGet('meaning-card-name').innerText = `${spreadRoles[cardIdx]}: ${card.name}`;
+      this.safeGet('meaning-card-name').innerText = `${spreadRoles[cardIdx % spreadRoles.length]}: ${card.name}`;
       this.safeGet('meaning-card-role').innerText = card.role;
       this.safeGet('meaning-card-text').innerText = card.text;
 
@@ -1214,6 +2964,11 @@ class InfernalTempleApp {
         this.saveGrimoireEntriesToStorage();
         this.renderGrimoireList();
         
+        this.ritualEngine.recordArtifact('tarot', `Tarot Oracle: ${new Date().toLocaleDateString()}`, readingDetails.join('\n\n'), {
+          spreadRoles,
+          cards: readingDetails
+        });
+
         alert("Oracle spread reading saved to grimoire logs!");
         this.switchTab('grimoire-journal');
         this.selectGrimoireEntry(newEntry.id);
@@ -1325,7 +3080,15 @@ class InfernalTempleApp {
     }
 
     this.safeBind('btn-journey-clear-log', 'click', () => {
-      if (logEl) logEl.innerHTML = '';
+      if (logEl && logEl.children.length > 0) {
+        if (confirm("Are you sure you want to clear the descent log history?")) {
+          const oldLog = logEl.innerHTML;
+          logEl.innerHTML = '';
+          this.showToast('Descent log cleared.', 'Undo', () => {
+            logEl.innerHTML = oldLog;
+          });
+        }
+      }
     });
   }
 
@@ -1465,6 +3228,35 @@ class InfernalTempleApp {
         this.toggleMixerControlsState(true);
         this.safeGet('audio-mixer-status').innerText = "Mixer active. Programmatic synthesis running locally.";
       }
+    });
+
+    const presetBtns = document.querySelectorAll('.sound-preset-btn');
+    const presets = {
+      sanctum: { hum: 0.5, drone: 0.4, noise: 0.1, beat: 0.15 },
+      crucible: { hum: 0.2, drone: 0.3, noise: 0.6, beat: 0.25 },
+      evocation: { hum: 0.3, drone: 0.5, noise: 0.2, beat: 0.5 },
+      astral: { hum: 0.6, drone: 0.2, noise: 0.35, beat: 0.1 }
+    };
+
+    presetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-preset');
+        const p = presets[name];
+        if (!p) return;
+
+        if (!this.synthPlaying && btnToggle) {
+          btnToggle.click();
+        }
+
+        Object.keys(p).forEach(k => {
+          if (sliders[k]) {
+            sliders[k].value = p[k];
+            if (valDisplays[k]) valDisplays[k].innerText = `${Math.round(p[k] * 100)}%`;
+            this.updateSynthVolume(k, p[k]);
+          }
+        });
+        this.safeGet('audio-mixer-status').innerText = `Preset Loaded: ${btn.innerText}`;
+      });
     });
 
     Object.keys(sliders).forEach(key => {
@@ -1921,6 +3713,12 @@ class InfernalTempleApp {
       osc.start(now);
       osc.stop(now + 2.5);
     }
+
+    if (this.ritualEngine) {
+      this.ritualEngine.recordArtifact('meditation', 'Focus Meditation Complete', 'Breathwork and mental concentration cycle successfully completed.', {
+        timestamp: Date.now()
+      });
+    }
   }
 
   // ==========================================
@@ -1942,6 +3740,36 @@ class InfernalTempleApp {
       const roman = ["I", "II", "III", "IV", "V"];
       if (intensityVal) intensityVal.innerText = `Level ${roman[val - 1]}`;
     });
+
+    const recipeSelect = this.safeGet('transmute-recipe-preset');
+    if (recipeSelect) {
+      recipeSelect.addEventListener('change', () => {
+        const v = recipeSelect.value;
+        const base = this.safeGet('reagent-base');
+        const cat = this.safeGet('reagent-catalyst');
+        if (v === 'lead-gold' && base && cat) {
+          base.value = "Lead Element";
+          cat.value = "Gold leaf fragments";
+          intensitySlider.value = 5;
+        } else if (v === 'mercury-nightshade' && base && cat) {
+          base.value = "Quicksilver Fluid";
+          cat.value = "Nightshade essence";
+          intensitySlider.value = 4;
+        } else if (v === 'brimstone-ashes' && base && cat) {
+          base.value = "Brimstone crystal";
+          cat.value = "Ashes of Inversion";
+          intensitySlider.value = 3;
+        } else if (v === 'sulfur-obsidian' && base && cat) {
+          base.value = "Sulfur powder";
+          cat.value = "Obsidian glass shards";
+          intensitySlider.value = 2;
+        }
+        if (intensityVal) {
+          const roman = ["I", "II", "III", "IV", "V"];
+          intensityVal.innerText = `Level ${roman[parseInt(intensitySlider.value) - 1]}`;
+        }
+      });
+    }
 
     const toolList = ["Iron Chalice", "Heavy Brass Bellows", "Ritual Athame (Dagger)", "Silver Censer"];
     const incenseList = ["Burning Frankincense", "Crushed Myrrh resin", "Warm Sandalwood embers", "Vapors of Wormwood"];
@@ -2033,6 +3861,12 @@ class InfernalTempleApp {
         this.saveGrimoireEntriesToStorage();
         this.renderGrimoireList();
 
+        if (this.ritualEngine) {
+          this.ritualEngine.recordArtifact('transmute', noteTitle, this.activeRecipeHtml.replace(/<[^>]*>/g, ''), {
+            reagent, catalyst, intensity: parseInt(intensitySlider.value)
+          });
+        }
+
         alert("Ritual recipe logged in Grimoire Notebook!");
         this.switchTab('grimoire-journal');
         this.selectGrimoireEntry(newEntry.id);
@@ -2110,6 +3944,11 @@ class InfernalTempleApp {
 
   saveGrimoireEntriesToStorage() {
     localStorage.setItem('hg_grimoire_entries', JSON.stringify(this.grimoireEntries));
+    if (this.storage && Array.isArray(this.grimoireEntries)) {
+      this.grimoireEntries.forEach(e => {
+        this.storage.saveJournalEntry(e);
+      });
+    }
   }
 
   renderGrimoireList() {
@@ -2196,57 +4035,486 @@ class InfernalTempleApp {
     this.selectGrimoireEntry(this.activeEntryId);
   }
 
+  showToast(message, actionLabel = null, actionCallback = null) {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toast-container';
+      container.style.cssText = 'position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:10px;';
+      document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'glass-card';
+    toast.style.cssText = 'padding:12px 20px; background:rgba(16,14,17,0.95); border:1px solid var(--primary); border-radius:8px; color:var(--text-primary); font-size:0.9rem; display:flex; align-items:center; gap:16px; box-shadow:var(--glow-primary);';
+    
+    const text = document.createElement('span');
+    text.innerText = message;
+    toast.appendChild(text);
+
+    if (actionLabel && actionCallback) {
+      const btn = document.createElement('button');
+      btn.className = 'btn btn-primary';
+      btn.style.cssText = 'padding:4px 12px; font-size:0.8rem; cursor:pointer;';
+      btn.innerText = actionLabel;
+      btn.onclick = () => {
+        actionCallback();
+        toast.remove();
+      };
+      toast.appendChild(btn);
+    }
+
+    container.appendChild(toast);
+    setTimeout(() => {
+      if (toast.parentNode) toast.remove();
+    }, 6000);
+  }
+
   deleteGrimoireEntry() {
     if (!this.activeEntryId) {
       this.clearGrimoireEditor();
       return;
     }
 
-    // Safety confirm check
-    if (confirm("⚠️ Are you sure you want to permanently delete this grimoire entry? This action is irreversible.")) {
+    const targetEntry = this.grimoireEntries.find(e => e.id === this.activeEntryId);
+    if (!targetEntry) return;
+
+    if (confirm(`⚠️ Are you sure you want to delete "${targetEntry.title || 'this entry'}"?`)) {
+      const entryIndex = this.grimoireEntries.findIndex(e => e.id === this.activeEntryId);
+      const deletedEntry = { ...targetEntry, index: entryIndex };
+      
       this.grimoireEntries = this.grimoireEntries.filter(e => e.id !== this.activeEntryId);
       this.saveGrimoireEntriesToStorage();
       this.clearGrimoireEditor();
       this.loadGrimoireEntriesFromStorage();
+
+      this.showToast(`Grimoire entry deleted.`, 'Undo', () => {
+        this.grimoireEntries.splice(deletedEntry.index, 0, targetEntry);
+        this.saveGrimoireEntriesToStorage();
+        this.loadGrimoireEntriesFromStorage();
+        this.selectGrimoireEntry(targetEntry.id);
+      });
     }
   }
 
-  exportGrimoireJSON() {
-    const blob = new Blob([JSON.stringify(this.grimoireEntries, null, 2)], { type: 'application/json' });
+  async exportGrimoireJSON() {
+    const rituals = await this.storage.getAllRituals();
+    const artifacts = await this.storage.getAllArtifacts();
+    const payload = {
+      app: "Homo Goetia",
+      version: 2,
+      exportedAt: Date.now(),
+      grimoireEntries: this.grimoireEntries,
+      rituals: rituals,
+      artifacts: artifacts
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `hg_grimoire_backup_${Date.now()}.json`;
+    link.download = `homo_goetia_grimoire_backup_${Date.now()}.json`;
     link.click();
     URL.revokeObjectURL(url);
+    this.showToast("Grimoire archive exported.");
   }
 
-  importGrimoireJSON(event) {
+  async importGrimoireJSON(event) {
     const file = event.target.files[0];
     if (!file) return;
 
-    if (!confirm("⚠️ WARNING: Importing a backup will overwrite current entries. Proceed?")) {
+    if (!confirm("⚠️ WARNING: Importing an archive will merge entries into your grimoire. Proceed?")) {
       event.target.value = '';
       return;
     }
 
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = async (e) => {
       try {
         const imported = JSON.parse(e.target.result);
         if (Array.isArray(imported)) {
           this.grimoireEntries = imported;
           this.saveGrimoireEntriesToStorage();
           this.loadGrimoireEntriesFromStorage();
-          alert("Backup successfully imported.");
+          this.showToast("Legacy journal entries restored.");
+        } else if (imported && typeof imported === 'object') {
+          if (Array.isArray(imported.grimoireEntries)) {
+            this.grimoireEntries = imported.grimoireEntries;
+            this.saveGrimoireEntriesToStorage();
+            this.loadGrimoireEntriesFromStorage();
+          }
+          if (Array.isArray(imported.rituals)) {
+            for (const r of imported.rituals) {
+              await this.storage.saveRitual(r);
+            }
+          }
+          if (Array.isArray(imported.artifacts)) {
+            for (const a of imported.artifacts) {
+              await this.storage.saveArtifact(a);
+            }
+          }
+          await this.refreshAllGrimoireViews();
+          await this.refreshAltarRecentSessions();
+          await this.refreshAltarRecentArtifacts();
+          if (this.livingSeal) await this.livingSeal.refresh();
+          this.showToast("Grimoire archive restored successfully.");
         } else {
           alert("Invalid backup format.");
         }
       } catch (err) {
-        alert("Failed to parse JSON file.");
+        alert("Failed to parse JSON file: " + err.message);
       }
     };
     reader.readAsText(file);
+  }
+
+  // ==========================================
+  // GRIMOIRE MULTI-VIEW & PERSISTENCE PANELS
+  // ==========================================
+  setGrimoireView(viewName) {
+    this.currentGrimoireView = viewName;
+    document.querySelectorAll('.grimoire-tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-grimoire-view') === viewName);
+    });
+
+    document.querySelectorAll('.grimoire-view-panel').forEach(panel => {
+      panel.style.display = 'none';
+    });
+
+    const target = this.safeGet(`grimoire-view-${viewName}`);
+    if (target) {
+      target.style.display = 'block';
+    }
+
+    if (viewName === 'sessions') {
+      this.renderGrimoireSessionsList();
+    } else if (viewName === 'artifacts') {
+      this.renderGrimoireArtifactsGrid();
+    } else if (viewName === 'journal') {
+      this.renderGrimoireList();
+    } else if (viewName === 'vault') {
+      this.vault.updateUI();
+    } else if (viewName === 'timeline') {
+      this.renderGrimoireTimeline();
+    }
+  }
+
+  async renderGrimoireSessionsList() {
+    const listEl = this.safeGet('grimoire-sessions-list');
+    if (!listEl) return;
+
+    const rituals = await this.storage.getAllRituals();
+    rituals.sort((a, b) => (b.sealedAt || b.createdAt || 0) - (a.sealedAt || a.createdAt || 0));
+
+    if (rituals.length === 0) {
+      listEl.innerHTML = `<p style="font-size:0.88rem; color:var(--text-muted); font-style:italic;">No ritual sessions recorded yet. Launch a ceremony on the Altar to begin.</p>`;
+      return;
+    }
+
+    listEl.innerHTML = '';
+    rituals.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'glass-card';
+      card.style.cssText = 'padding:1rem; border-color:var(--border-color); display:flex; flex-direction:column; gap:0.5rem;';
+      
+      const isSealed = r.status === 'sealed';
+      const statusBadge = isSealed 
+        ? `<span class="badge-provenance badge-personal">⛧ SEALED</span>`
+        : `<span class="badge-provenance badge-archive">${r.status.toUpperCase()}</span>`;
+      
+      const compLabel = (r.compositionId || 'CUSTOM').toUpperCase();
+      const dateStr = new Date(r.sealedAt || r.createdAt).toLocaleString();
+      const completedStages = r.stages ? r.stages.filter(s => s.status === 'completed').length : 0;
+      const totalStages = r.stages ? r.stages.length : 0;
+      const artCount = r.artifacts ? r.artifacts.length : 0;
+
+      card.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem;">
+          <div>
+            <h4 style="font-family:var(--font-headline); font-size:1.05rem; color:var(--text-primary); margin:0 0 0.25rem 0;">${r.title}</h4>
+            <div style="font-size:0.75rem; color:var(--text-muted);">${dateStr} &bull; Composition: <strong style="color:var(--accent-gold);">${compLabel}</strong></div>
+          </div>
+          <div>${statusBadge}</div>
+        </div>
+        <p style="font-size:0.85rem; font-style:italic; color:var(--text-secondary); margin:0.25rem 0; border-left:2px solid var(--primary); padding-left:0.5rem;">"${r.intention || 'No intention recorded.'}"</p>
+        <div style="display:flex; gap:1rem; font-size:0.78rem; color:var(--text-muted); flex-wrap:wrap; margin-top:0.25rem;">
+          <span>Stages: <strong style="color:var(--text-primary);">${completedStages}/${totalStages}</strong> completed</span>
+          <span>Artifacts: <strong style="color:var(--accent-gold);">${artCount}</strong> forged</span>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.5rem; flex-wrap:wrap;">
+          ${isSealed ? `<button class="btn btn-outline" style="font-size:0.75rem; padding:0.25rem 0.6rem;" onclick="app.inspectRitualOnSeal('${r.id}')">👁 View on Living Seal</button>` : ''}
+          <button class="btn btn-danger" style="font-size:0.75rem; padding:0.25rem 0.6rem;" onclick="app.deleteRitualSession('${r.id}')">🗑 Delete</button>
+        </div>
+      `;
+      listEl.appendChild(card);
+    });
+  }
+
+  inspectRitualOnSeal(ritualId) {
+    this.switchDomain('altar');
+    if (this.livingSeal) {
+      this.livingSeal.isolateRitual(ritualId);
+      const inspector = this.safeGet('seal-inspector-card');
+      if (inspector) inspector.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  async deleteRitualSession(ritualId) {
+    if (!confirm("Delete this ritual session? This action cannot be undone.")) return;
+    await this.storage.deleteItem('rituals', ritualId);
+    this.showToast("Ritual session removed.");
+    if (this.livingSeal) await this.livingSeal.refresh();
+    await this.refreshAllGrimoireViews();
+    await this.refreshAltarRecentSessions();
+  }
+
+  filterArtifacts(type) {
+    this.renderGrimoireArtifactsGrid(type);
+  }
+
+  async renderGrimoireArtifactsGrid(filterType = 'all') {
+    const gridEl = this.safeGet('grimoire-artifacts-grid');
+    if (!gridEl) return;
+
+    let artifacts = await this.storage.getAllArtifacts();
+    artifacts.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+
+    if (filterType !== 'all') {
+      artifacts = artifacts.filter(a => a.type === filterType);
+    }
+
+    if (artifacts.length === 0) {
+      gridEl.innerHTML = `<p style="font-size:0.88rem; color:var(--text-muted); font-style:italic; grid-column:1/-1;">No artifacts forged yet.</p>`;
+      return;
+    }
+
+    gridEl.innerHTML = '';
+    artifacts.forEach(art => {
+      const card = document.createElement('div');
+      card.className = 'glass-card';
+      card.style.cssText = 'padding:0.85rem; border-color:var(--border-color); display:flex; flex-direction:column; gap:0.5rem; justify-content:space-between;';
+
+      const typeBadges = {
+        sigil: '<span class="badge-provenance badge-personal">SIGIL</span>',
+        tarot: '<span class="badge-provenance badge-archive">TAROT</span>',
+        transmute: '<span class="badge-provenance badge-forged">ELIXIR</span>',
+        pact: '<span class="badge-provenance badge-personal">PACT</span>',
+        meditation: '<span class="badge-provenance badge-archive">FOCUS</span>',
+        demon: '<span class="badge-provenance badge-forged">DEMON</span>'
+      };
+      const badge = typeBadges[art.type] || `<span class="badge-provenance badge-personal">${(art.type || 'ARTIFACT').toUpperCase()}</span>`;
+      const dateStr = new Date(art.createdAt).toLocaleDateString();
+
+      let previewHtml = '';
+      if (art.type === 'sigil' && typeof art.data === 'string' && art.data.startsWith('data:image')) {
+        previewHtml = `<div style="text-align:center; background:#060506; border-radius:4px; padding:0.5rem; margin:0.25rem 0;"><img src="${art.data}" alt="${art.title}" style="max-height:120px; max-width:100%; filter:drop-shadow(0 0 6px var(--primary));"></div>`;
+      } else if (art.type === 'pact' && art.metadata && art.metadata.signature) {
+        previewHtml = `<div style="text-align:center; background:#060506; border-radius:4px; padding:0.5rem; margin:0.25rem 0;"><img src="${art.metadata.signature}" alt="Signature" style="max-height:80px; max-width:100%;"></div>`;
+      } else {
+        const textSnippet = typeof art.data === 'string' ? art.data.replace(/<[^>]*>?/gm, '').slice(0, 120) : JSON.stringify(art.metadata || {}).slice(0, 120);
+        previewHtml = `<div style="font-size:0.75rem; color:var(--text-secondary); background:#060506; border-radius:4px; padding:0.5rem; margin:0.25rem 0; font-family:var(--font-mono); overflow:hidden;">${textSnippet}...</div>`;
+      }
+
+      card.innerHTML = `
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+            ${badge}
+            <span style="font-size:0.72rem; color:var(--text-muted);">${dateStr}</span>
+          </div>
+          <h4 style="font-family:var(--font-headline); font-size:0.95rem; color:var(--text-primary); margin:0 0 0.25rem 0; line-height:1.3;">${art.title}</h4>
+          ${previewHtml}
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+          <button class="btn btn-outline" style="font-size:0.72rem; padding:0.2rem 0.5rem;" onclick="app.downloadArtifact('${art.id}')">💾 Export</button>
+          <button class="btn btn-danger" style="font-size:0.72rem; padding:0.2rem 0.5rem;" onclick="app.deleteArtifact('${art.id}')">🗑</button>
+        </div>
+      `;
+      gridEl.appendChild(card);
+    });
+  }
+
+  async downloadArtifact(artifactId) {
+    const art = await this.storage.getItem('artifacts', artifactId);
+    if (!art) return;
+    if (art.type === 'sigil' && typeof art.data === 'string' && art.data.startsWith('data:image')) {
+      const a = document.createElement('a');
+      a.href = art.data;
+      a.download = `${art.title.replace(/[^a-zA-Z0-9_-]/g, '_')}.png`;
+      a.click();
+    } else {
+      const blob = new Blob([JSON.stringify(art, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${art.title.replace(/[^a-zA-Z0-9_-]/g, '_')}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    this.showToast("Artifact exported.");
+  }
+
+  async deleteArtifact(artifactId) {
+    if (!confirm("Delete this forged artifact?")) return;
+    await this.storage.deleteItem('artifacts', artifactId);
+    this.showToast("Artifact deleted.");
+    this.renderGrimoireArtifactsGrid(this.safeGet('artifact-type-filter') ? this.safeGet('artifact-type-filter').value : 'all');
+    await this.refreshAltarRecentArtifacts();
+  }
+
+  searchTimeline(query) {
+    this.renderGrimoireTimeline(query);
+  }
+
+  async renderGrimoireTimeline(query = '') {
+    const feedEl = this.safeGet('timeline-entries-feed');
+    if (!feedEl) return;
+
+    const rituals = await this.storage.getAllRituals();
+    const artifacts = await this.storage.getAllArtifacts();
+    const journal = this.grimoireEntries || [];
+
+    const timelineItems = [];
+
+    rituals.forEach(r => {
+      timelineItems.push({
+        id: r.id,
+        category: 'RITUAL',
+        timestamp: r.sealedAt || r.createdAt,
+        title: `Ceremony: ${r.title}`,
+        detail: `Intention: "${r.intention || 'Sovereign'}" • Status: ${(r.status || '').toUpperCase()}`,
+        provenance: r.provenance || 'PERSONAL'
+      });
+    });
+
+    artifacts.forEach(a => {
+      timelineItems.push({
+        id: a.id,
+        category: 'ARTIFACT',
+        timestamp: a.createdAt,
+        title: `Forged ${(a.type || 'artifact').toUpperCase()}: ${a.title}`,
+        detail: typeof a.data === 'string' ? a.data.slice(0, 100) : 'Artifact metadata logged.',
+        provenance: a.provenance || 'FORGED'
+      });
+    });
+
+    journal.forEach(j => {
+      timelineItems.push({
+        id: j.id,
+        category: 'JOURNAL',
+        timestamp: j.timestamp || Date.now(),
+        title: `Journal: ${j.title || 'Untitled Entry'}`,
+        detail: (j.content || '').slice(0, 100),
+        provenance: 'PERSONAL'
+      });
+    });
+
+    timelineItems.sort((a, b) => b.timestamp - a.timestamp);
+
+    const q = query.toLowerCase().trim();
+    const filtered = q ? timelineItems.filter(item => 
+      item.title.toLowerCase().includes(q) ||
+      item.detail.toLowerCase().includes(q) ||
+      item.category.toLowerCase().includes(q)
+    ) : timelineItems;
+
+    if (filtered.length === 0) {
+      feedEl.innerHTML = `<p style="font-size:0.88rem; color:var(--text-muted); font-style:italic;">No events recorded in ritual timeline matching query.</p>`;
+      return;
+    }
+
+    feedEl.innerHTML = '';
+    filtered.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'glass-card';
+      row.style.cssText = 'padding:0.75rem 1rem; border-color:var(--border-color); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;';
+      
+      const badgeCls = item.provenance === 'ARCHIVE' ? 'badge-archive' : item.provenance === 'FORGED' ? 'badge-forged' : 'badge-personal';
+      const icon = item.category === 'RITUAL' ? '⚔' : item.category === 'ARTIFACT' ? '🔮' : '📓';
+
+      row.innerHTML = `
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <span style="font-size:1.2rem;">${icon}</span>
+          <div>
+            <div style="font-size:0.9rem; font-weight:600; color:var(--text-primary);">${item.title}</div>
+            <div style="font-size:0.78rem; color:var(--text-muted);">${item.detail}</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span class="badge-provenance ${badgeCls}">${item.provenance}</span>
+          <span style="font-size:0.72rem; color:var(--text-muted);">${new Date(item.timestamp).toLocaleDateString()}</span>
+        </div>
+      `;
+      feedEl.appendChild(row);
+    });
+  }
+
+  async refreshAllGrimoireViews() {
+    await this.renderGrimoireSessionsList();
+    await this.renderGrimoireArtifactsGrid();
+    await this.renderGrimoireTimeline();
+    this.renderGrimoireList();
+  }
+
+  async refreshAltarRecentSessions() {
+    const container = this.safeGet('altar-recent-sessions');
+    if (!container) return;
+
+    const rituals = await this.storage.getAllRituals();
+    rituals.sort((a, b) => (b.sealedAt || b.createdAt || 0) - (a.sealedAt || a.createdAt || 0));
+    const recent = rituals.slice(0, 3);
+
+    if (recent.length === 0) {
+      container.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted); font-style:italic;">No ceremonies sealed yet. Select a composition above to initiate.</p>`;
+      return;
+    }
+
+    container.innerHTML = '';
+    recent.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'glass-card';
+      card.style.cssText = 'padding:0.75rem; border-color:var(--border-color); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;';
+      const dateStr = new Date(r.sealedAt || r.createdAt).toLocaleDateString();
+      card.innerHTML = `
+        <div>
+          <div style="font-size:0.9rem; font-weight:600; color:var(--text-primary);">${r.title}</div>
+          <div style="font-size:0.75rem; color:var(--text-muted);">${dateStr} &bull; "${(r.intention || '').slice(0, 36)}..."</div>
+        </div>
+        <button class="btn btn-outline" style="font-size:0.75rem; padding:0.25rem 0.5rem;" onclick="app.inspectRitualOnSeal('${r.id}')">👁 View Seal</button>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  async refreshAltarRecentArtifacts() {
+    const container = this.safeGet('altar-recent-artifacts');
+    if (!container) return;
+
+    const artifacts = await this.storage.getAllArtifacts();
+    artifacts.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+    const recent = artifacts.slice(0, 4);
+
+    if (recent.length === 0) {
+      container.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted); font-style:italic;">No artifacts forged yet.</p>`;
+      return;
+    }
+
+    container.innerHTML = '';
+    recent.forEach(a => {
+      const item = document.createElement('div');
+      item.className = 'glass-card';
+      item.style.cssText = 'padding:0.6rem; border-color:var(--border-color); text-align:center; font-size:0.8rem;';
+      let icon = '🔮';
+      if (a.type === 'sigil') icon = '⛧';
+      else if (a.type === 'tarot') icon = '🃏';
+      else if (a.type === 'transmute') icon = '⚗';
+      else if (a.type === 'pact') icon = '🩸';
+
+      item.innerHTML = `
+        <div style="font-size:1.3rem; margin-bottom:0.25rem;">${icon}</div>
+        <div style="font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${a.title}">${a.title}</div>
+        <div style="font-size:0.7rem; color:var(--text-muted);">${new Date(a.createdAt).toLocaleDateString()}</div>
+      `;
+      container.appendChild(item);
+    });
   }
 
   // ==========================================
@@ -2280,6 +4548,45 @@ class InfernalTempleApp {
       }
     });
 
+    this.safeBind('btn-solomon-blend-seal', 'click', () => {
+      const active = this.getSolomonActiveItem();
+      if (!active) return;
+      
+      const randomSecond = GOETIA_SPIRITS[Math.floor(Math.random() * GOETIA_SPIRITS.length)];
+      const blendedName = `${active.name} × ${randomSecond.name}`;
+      const color = 'var(--accent-gold)';
+
+      const pane = this.safeGet('solomon-detail-pane');
+      if (!pane) return;
+
+      const dualSvg = `
+        <svg viewBox="0 0 300 300" class="solomon-svg" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="135" fill="none" stroke="${color}" stroke-width="3" />
+          <polygon points="150,25 258,225 42,225" fill="none" stroke="var(--primary)" stroke-width="2" />
+          <polygon points="150,275 42,75 258,75" fill="none" stroke="var(--accent-purple)" stroke-width="2" opacity="0.7" />
+          <text x="150" y="155" fill="${color}" font-family="Cinzel, serif" font-size="14" font-weight="bold" text-anchor="middle">DUAL BLEND SEAL</text>
+          <text x="150" y="175" fill="var(--text-secondary)" font-family="sans-serif" font-size="10" text-anchor="middle">${blendedName}</text>
+        </svg>
+      `;
+
+      pane.innerHTML = `
+        <div class="solomon-view">
+          <div class="solomon-metadata">
+            <h3 style="color:var(--accent-gold); border-bottom:1px solid var(--border-color); padding-bottom:0.5rem; font-size:1.4rem;">Dual Invocative Blend: ${blendedName}</h3>
+            <div class="solomon-meta-row"><span class="solomon-meta-label">Primary Entity</span><span class="solomon-meta-val">${active.name}</span></div>
+            <div class="solomon-meta-row"><span class="solomon-meta-label">Secondary Entity</span><span class="solomon-meta-val">${randomSecond.name} (${randomSecond.rank})</span></div>
+            <div class="solomon-desc">
+              <h4>Synergistic Resonances</h4>
+              <p>Harmonizes ${active.name}'s power with ${randomSecond.name}'s office (${randomSecond.office}).</p>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <div class="solomon-svg-container" style="border-color:var(--accent-gold); box-shadow:0 0 15px rgba(200,150,62,0.3);">${dualSvg}</div>
+          </div>
+        </div>
+      `;
+    });
+
     this.renderSolomonList();
   }
 
@@ -2289,6 +4596,10 @@ class InfernalTempleApp {
       const id = parseInt(this.solomonActiveId.split('-').pop());
       const s = GOETIA_SPIRITS.find(item => item.id === id);
       if (s) return { id: this.solomonActiveId, name: s.name, category: 'goetia', data: s };
+    } else if (this.solomonActiveId.startsWith('shem-')) {
+      const id = parseInt(this.solomonActiveId.split('-').pop());
+      const a = SHEM_ANGELS.find(item => item.num === id);
+      if (a) return { id: this.solomonActiveId, name: a.name, category: 'shem', data: a };
     } else {
       const p = PENTACLES.find(item => item.id === this.solomonActiveId);
       if (p) return { id: this.solomonActiveId, name: p.title, category: 'pentacles', data: p };
@@ -2322,6 +4633,14 @@ class InfernalTempleApp {
       });
     }
 
+    if (cat === 'all' || cat === 'shem') {
+      SHEM_ANGELS.forEach(a => {
+        if (a.name.toLowerCase().includes(query) || a.order.toLowerCase().includes(query)) {
+          items.push({ id: a.id, name: `#${a.num} ${a.name}`, sub: `${a.order} (${a.verse})`, glyph: '✨', category: 'shem', data: a });
+        }
+      });
+    }
+
     items.forEach(item => {
       const btn = document.createElement('button');
       btn.className = `solomon-item ${this.solomonActiveId === item.id ? 'active' : ''}`;
@@ -2339,6 +4658,14 @@ class InfernalTempleApp {
       });
       listEl.appendChild(btn);
     });
+
+    if (items.length === 0) {
+      listEl.innerHTML = `<div class="empty-state-card" style="padding: 1.5rem; text-align: center; color: var(--text-muted); border: 1px dashed var(--border-color); border-radius: var(--radius-md);">
+        <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--text-secondary);">⛧ No Spirits or Pentacles Found</p>
+        <p style="font-size: 0.85rem;">Try adjusting your search terms or category filter.</p>
+      </div>`;
+      return;
+    }
 
     if (!this.solomonActiveId && items.length > 0) {
       this.solomonActiveId = items[0].id;
@@ -2390,6 +4717,10 @@ class InfernalTempleApp {
       pane.innerHTML = `
         <div class="solomon-view">
           <div class="solomon-metadata">
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+              <span class="badge-provenance badge-forged">FORGED / PROCEDURAL</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Algorithmic vector synthesis</span>
+            </div>
             <h3 style="color:${color}; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem; font-size:1.4rem;">${s.name}</h3>
             <div class="solomon-meta-row"><span class="solomon-meta-label">Hierarchical Rank</span><span class="solomon-meta-val">${s.rank}</span></div>
             <div class="solomon-meta-row"><span class="solomon-meta-label">Sphere</span><span class="solomon-meta-val">${s.planet}</span></div>
@@ -2404,11 +4735,38 @@ class InfernalTempleApp {
           </div>
         </div>
       `;
+    } else if (item.category === 'shem') {
+      const a = item.data;
+      pane.innerHTML = `
+        <div class="solomon-view">
+          <div class="solomon-metadata">
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+              <span class="badge-provenance badge-archive">ARCHIVE</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Historical Shem HaMephorash</span>
+            </div>
+            <h3 style="color:var(--accent-gold); border-bottom:1px solid var(--border-color); padding-bottom:0.5rem; font-size:1.4rem;">Angel #${a.num}: ${a.name}</h3>
+            <div class="solomon-meta-row"><span class="solomon-meta-label">Angelic Order</span><span class="solomon-meta-val">${a.order}</span></div>
+            <div class="solomon-meta-row"><span class="solomon-meta-label">Sacred Verse</span><span class="solomon-meta-val">${a.verse}</span></div>
+            <div class="solomon-meta-row"><span class="solomon-meta-label">Goetic Counterpart</span><span class="solomon-meta-val">Spirit #${a.goetiaCounterId}</span></div>
+            <div class="solomon-desc">
+              <h4>Counter-Illumination Virtue</h4>
+              <p>${a.virtue}</p>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <div class="solomon-svg-container" style="border-color:var(--accent-gold); box-shadow:0 0 15px rgba(200, 150, 62, 0.2);">${svg}</div>
+          </div>
+        </div>
+      `;
     } else {
       const p = item.data;
       pane.innerHTML = `
         <div class="solomon-view">
           <div class="solomon-metadata">
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+              <span class="badge-provenance badge-archive">ARCHIVE</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Clavicula Salomonis Historical Record</span>
+            </div>
             <h3 style="color:${color}; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem; font-size:1.4rem;">${p.title}</h3>
             <div class="solomon-meta-row"><span class="solomon-meta-label">Planet</span><span class="solomon-meta-val">${p.planet}</span></div>
             <div class="solomon-desc">
@@ -2582,17 +4940,24 @@ class InfernalTempleApp {
 
     drawCleanBanish();
 
+    canvas.style.touchAction = 'none';
+
     const getPos = (e) => {
       const rect = canvas.getBoundingClientRect();
-      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      const clientX = e.clientX ?? (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      const clientY = e.clientY ?? (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+      return { x: clientX - rect.left, y: clientY - rect.top };
     };
 
-    canvas.addEventListener('mousedown', (e) => {
+    const startBanish = (e) => {
       this.banishIsDrawing = true;
       this.banishPoints = [getPos(e)];
-    });
+      if (e.target.setPointerCapture && e.pointerId !== undefined) {
+        try { e.target.setPointerCapture(e.pointerId); } catch(err) {}
+      }
+    };
 
-    canvas.addEventListener('mousemove', (e) => {
+    const moveBanish = (e) => {
       if (!this.banishIsDrawing) return;
       this.banishPoints.push(getPos(e));
 
@@ -2605,13 +4970,26 @@ class InfernalTempleApp {
         ctx.lineTo(this.banishPoints[i].x, this.banishPoints[i].y);
       }
       ctx.stroke();
-    });
+    };
 
-    canvas.addEventListener('mouseup', () => {
+    const endBanish = (e) => {
       if (!this.banishIsDrawing) return;
       this.banishIsDrawing = false;
+      if (e && e.target && e.target.releasePointerCapture && e.pointerId !== undefined) {
+        try { e.target.releasePointerCapture(e.pointerId); } catch(err) {}
+      }
       this.evaluateBanishmentPath(points);
-    });
+    };
+
+    canvas.addEventListener('pointerdown', startBanish);
+    canvas.addEventListener('pointermove', moveBanish);
+    canvas.addEventListener('pointerup', endBanish);
+    canvas.addEventListener('pointercancel', endBanish);
+
+    // Fallback mouse events
+    canvas.addEventListener('mousedown', startBanish);
+    canvas.addEventListener('mousemove', moveBanish);
+    canvas.addEventListener('mouseup', endBanish);
 
     this.safeBind('btn-reset-banish', 'click', () => {
       this.banishPoints = [];
@@ -2674,6 +5052,33 @@ class InfernalTempleApp {
     const saturn = this.safeGet('astrolabe-saturn');
 
     if (!sun) return;
+
+    const updateLivePlanetaryHour = () => {
+      const clockEl = this.safeGet('planetary-hour-clock');
+      const infoEl = this.safeGet('planetary-hour-info');
+      if (!clockEl || !infoEl) return;
+
+      const now = new Date();
+      const hour = now.getHours();
+      const planetaryHours = [
+        { name: "Sun (☉)", element: "Fire", metal: "Gold", focus: "Authority, vitality, and high ceremonial operations." },
+        { name: "Venus (♀)", element: "Earth", metal: "Copper", focus: "Harmony, attraction, and artistic creation." },
+        { name: "Mercury (☿)", element: "Air", metal: "Quicksilver", focus: "Ciphers, logic, communication, and swift action." },
+        { name: "Moon (☽)", element: "Water", metal: "Silver", focus: "Dreams, astral portals, and sub-conscious exploration." },
+        { name: "Saturn (♄)", element: "Earth", metal: "Lead", focus: "Banishment, discipline, and structural bounds." },
+        { name: "Jupiter (♃)", element: "Water", metal: "Tin", focus: "Abundance, glory, and expansion of consciousness." },
+        { name: "Mars (♂)", element: "Fire", metal: "Iron", focus: "Courage, martial vigor, and destroying opposition." }
+      ];
+
+      const current = planetaryHours[hour % 7];
+      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      clockEl.innerHTML = `Current Planetary Hour: <strong>${current.name}</strong> (${timeStr})`;
+      infoEl.innerHTML = `<strong>Element:</strong> ${current.element} &nbsp;|&nbsp; <strong>Metal:</strong> ${current.metal}<br><strong>Optimal Focus:</strong> ${current.focus}`;
+    };
+
+    updateLivePlanetaryHour();
+    setInterval(updateLivePlanetaryHour, 60000);
 
     const canvas = this.safeGet('astrolabe-canvas');
     const ctx = canvas.getContext('2d');
@@ -2753,29 +5158,30 @@ class InfernalTempleApp {
     const btn = this.safeGet('btn-summon-demon');
     if (!btn) return;
 
-    const namesPrefix = ["Zor", "Phal", "Vex", "Bar", "Amon", "Mal"];
-    const namesSuffix = ["oth", "agor", "ion", "akor", "imon", "ith"];
-    const offices = ["wealth and monetary treasures", "invisibility and hidden secrets", "languages and intellectual arguments"];
-
     btn.addEventListener('click', () => {
       this.playClickSound();
       
-      const rank = this.safeGet('demon-rank').value;
-      const elem = this.safeGet('demon-element').value;
-      
-      const name = namesPrefix[this.getRandomNumber(namesPrefix.length)] + namesSuffix[this.getRandomNumber(namesSuffix.length)];
-      const legions = this.getRandomNumber(80) + 12;
-      const office = offices[this.getRandomNumber(offices.length)];
+      const rank = this.safeGet('demon-rank') ? this.safeGet('demon-rank').value : 'All';
+      const elem = this.safeGet('demon-element') ? this.safeGet('demon-element').value : 'All';
 
-      this.safeGet('demon-output-title').innerText = `Summoned: ${name}`;
+      let filtered = GOETIA_SPIRITS.filter(s => 
+        (rank === 'All' || s.rank === rank) && (elem === 'All' || s.element === elem)
+      );
+
+      if (filtered.length === 0) filtered = GOETIA_SPIRITS;
+
+      const spirit = filtered[this.getRandomNumber(filtered.length)];
+
+      this.safeGet('demon-output-title').innerText = `Summoned Spirit: ${spirit.name}`;
       this.safeGet('demon-output-desc').innerHTML = `
-        A powerful <strong>${rank}</strong> of the <strong>${elem}</strong> vector.<br>
-        He commands <strong>${legions}</strong> legions of sub-spirits.<br>
-        <strong>Magical Office:</strong> Provides deep mastery over ${office} and secures sovereignty.
+        A powerful <strong>${spirit.rank}</strong> governed by <strong>${spirit.planet}</strong> (${spirit.element} Element).<br>
+        Commands <strong>${spirit.legions}</strong> infernal legions.<br>
+        <strong>Planetary Metal:</strong> ${spirit.metal} &nbsp;|&nbsp; <strong>Incense:</strong> ${spirit.incense}<br>
+        <strong>Magical Office:</strong> ${spirit.office}
       `;
 
-      const strokeColor = rank === 'King' ? 'var(--accent-gold)' : rank === 'Prince' ? 'var(--accent-purple)' : 'var(--primary)';
-      const mockItem = { id: `gen-${name}`, category: 'goetia', data: { name, rank, element: elem } };
+      const strokeColor = spirit.rank === 'King' ? 'var(--accent-gold)' : spirit.rank === 'Duke' ? 'var(--accent-purple)' : 'var(--primary)';
+      const mockItem = { id: `goetia-${spirit.id}`, name: spirit.name, category: 'goetia', data: spirit };
       this.safeGet('demon-sigil-container').innerHTML = this.generateSolomonSVG(mockItem, strokeColor);
 
       const outputCard = this.safeGet('demon-output-card');
@@ -2784,6 +5190,17 @@ class InfernalTempleApp {
         outputCard.classList.remove('slide-up-entry');
         void outputCard.offsetWidth; // Trigger reflow
         outputCard.classList.add('slide-up-entry');
+      }
+    });
+
+    this.safeBind('btn-save-demon-artifact', 'click', async () => {
+      const title = this.safeGet('demon-output-title')?.innerText || 'Summoned Entity';
+      const desc = this.safeGet('demon-output-desc')?.innerText || '';
+      if (this.ritualEngine) {
+        await this.ritualEngine.recordArtifact('demon', title, desc, {
+          provenance: 'FORGED'
+        });
+        this.showToast(`${title} recorded to Grimoire`);
       }
     });
   }
@@ -2797,6 +5214,16 @@ class InfernalTempleApp {
     const saveBtn = this.safeGet('btn-cipher-save-journal');
 
     if (!btnEncrypt) return;
+
+    const vaultSelect = this.safeGet('cipher-key-vault');
+    if (vaultSelect) {
+      vaultSelect.addEventListener('change', () => {
+        const kInput = this.safeGet('cipher-key');
+        if (kInput && vaultSelect.value) {
+          kInput.value = vaultSelect.value;
+        }
+      });
+    }
 
     btnEncrypt.addEventListener('click', () => {
       const key = this.safeGet('cipher-key').value.trim() || "TEMPLE";
@@ -2881,6 +5308,8 @@ class InfernalTempleApp {
 
     if (!canvas) return;
 
+    canvas.style.touchAction = 'none';
+
     // Populate spirits
     if (spiritSelect) {
       spiritSelect.innerHTML = '';
@@ -2901,24 +5330,44 @@ class InfernalTempleApp {
 
     const getPos = (e) => {
       const rect = canvas.getBoundingClientRect();
-      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      const clientX = e.clientX ?? (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+      const clientY = e.clientY ?? (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+      return { x: clientX - rect.left, y: clientY - rect.top };
     };
 
-    canvas.addEventListener('mousedown', (e) => {
+    const startPact = (e) => {
       drawing = true;
       const pos = getPos(e);
       ctx.beginPath();
       ctx.moveTo(pos.x, pos.y);
-    });
+      if (e.target.setPointerCapture && e.pointerId !== undefined) {
+        try { e.target.setPointerCapture(e.pointerId); } catch(err) {}
+      }
+    };
 
-    canvas.addEventListener('mousemove', (e) => {
+    const movePact = (e) => {
       if (!drawing) return;
       const pos = getPos(e);
       ctx.lineTo(pos.x, pos.y);
       ctx.stroke();
-    });
+    };
 
-    canvas.addEventListener('mouseup', () => drawing = false);
+    const endPact = (e) => {
+      drawing = false;
+      if (e && e.target && e.target.releasePointerCapture && e.pointerId !== undefined) {
+        try { e.target.releasePointerCapture(e.pointerId); } catch(err) {}
+      }
+    };
+
+    canvas.addEventListener('pointerdown', startPact);
+    canvas.addEventListener('pointermove', movePact);
+    canvas.addEventListener('pointerup', endPact);
+    canvas.addEventListener('pointercancel', endPact);
+
+    // Fallback mouse events
+    canvas.addEventListener('mousedown', startPact);
+    canvas.addEventListener('mousemove', movePact);
+    canvas.addEventListener('mouseup', endPact);
 
     if (clearBtn) {
       clearBtn.addEventListener('click', () => {
@@ -2927,7 +5376,7 @@ class InfernalTempleApp {
     }
 
     if (sealBtn) {
-      sealBtn.addEventListener('click', () => {
+      sealBtn.addEventListener('click', async () => {
         const spirit = spiritSelect.value;
         const terms = this.safeGet('pact-terms').value.trim();
 
@@ -2948,6 +5397,13 @@ class InfernalTempleApp {
         this.grimoireEntries.unshift(newEntry);
         this.saveGrimoireEntriesToStorage();
         this.renderGrimoireList();
+
+        if (this.ritualEngine) {
+          await this.ritualEngine.recordArtifact('pact', `Blood Pact: ${spirit}`, terms, {
+            spirit,
+            signature: canvas.toDataURL('image/png')
+          });
+        }
 
         alert(`Pact with ${spirit} successfully sealed!`);
         this.switchTab('grimoire-journal');
@@ -3283,8 +5739,7 @@ class InfernalTempleApp {
           if (statusText) statusText.innerText = `Charging aura concentration expanding...`;
           
           if (aura) {
-            aura.style.width = `${this.chargeLevel * 1.8}px`;
-            aura.style.height = `${this.chargeLevel * 1.8}px`;
+            aura.style.transform = `scale(${this.chargeLevel / 100})`;
             aura.style.opacity = this.chargeLevel / 100;
           }
 
@@ -3319,8 +5774,7 @@ class InfernalTempleApp {
         }
         if (statusText) statusText.innerText = "Focus broke. Charge grounded.";
         if (aura) {
-          aura.style.width = '0px';
-          aura.style.height = '0px';
+          aura.style.transform = 'scale(0)';
           aura.style.opacity = 0;
         }
         if (saveBtn) saveBtn.style.display = 'none';

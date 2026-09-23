@@ -1,4 +1,12 @@
 {
+  "name": "homo-goetia",
+  "version": "2.0.0",
+  "description": "Private, local-first ritual operating system and computational grimoire",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "build": "node build_offline.js",
+    "build:offline": "node build_offline.js"
+  },
   "dependencies": {
     "playwright": "^1.61.1"
   }

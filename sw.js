@@ -1,12 +1,11 @@
-const CACHE_NAME = 'infernal-temple-cache-v7';
+const CACHE_NAME = 'homo-goetia-sanctum-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './style.css',
   './app.js',
   './manifest.json',
-  './icon.svg',
-  'https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;700&family=Outfit:wght@300;400;600&display=swap'
+  './icon.svg'
 ];
 
 // Install Event - Pre-cache Assets
